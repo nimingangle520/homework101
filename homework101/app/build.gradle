@@ -1,0 +1,124 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.shushan.homework101"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+        flavorDimensions "pack"
+        manifestPlaceholders = [UMENG_CHANNEL: "example"]
+
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    productFlavors {
+        tencent {
+            applicationId "com.shushan.homework101"
+            dimension 'pack'
+            manifestPlaceholders = [appName: 'tencent']
+        }
+        baidu {
+            applicationId 'com.shushan.homework101'
+            dimension 'pack'
+            manifestPlaceholders = [appName: 'baidu']
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile
+            storePassword
+            keyAlias
+            keyPassword
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        debug {
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    getSigningProperties()
+    //自定义输出包名的设置
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            // 输出apk名称为sharev1.0_tencent.apk
+            def fileName = "share_${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+            outputFileName = fileName
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            aaptOptions.setProperty("cruncherEnabled", false)
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+        //输出类型
+        applicationVariants.all {
+            def buildType = it.buildType.name
+            def createTime = new Date().format('YYYY-MM-dd', TimeZone.getTimeZone("UTC"))
+            if (buildType == "release") {
+                it.getPackageApplication().outputDirectory = new File('C:\\out_apk' + "/${it.productFlavors[0].applicationId}/${createTime}")
+            }
+        }
+        /* android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "shark_${defaultConfig.versionName}.apk"
+            }
+        }*/
+    }
+}
+
+def getSigningProperties() {
+    def proFile = file("signing.properties")
+    if (proFile.canRead()) {
+        def Properties props = new Properties()
+        props.load(new FileInputStream(proFile))
+        if (props != null && props.containsKey("STORE_FILE") && props.containsKey("STORE_PASSWORD") && props.containsKey("KEY_ALIAS") && props.containsKey("KEY_PASSWOED")) {
+            android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+            android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+            android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+            android.signingConfigs.release.keyPassword = props['KEY_PASSWOED']
+        } else {
+            println 'signing.properties found but some entries are missing'
+            android.buildTypes.release.signingConfig = null
+        }
+    } else {
+        println 'signing.properties not found'
+        android.buildTypes.release.signingConfig = null
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.android.support:design:28.0.0-alpha3'
+}

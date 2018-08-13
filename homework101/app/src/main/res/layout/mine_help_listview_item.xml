@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_mine_help_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/homepage_operation_check"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_mine_help_obligation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/mine_help_obligation"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_mine_help_line_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_2dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:background="@color/TextColorBlack"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_obligation"
+        />
+
+    <ImageView
+        android:id="@+id/iv_mine_help_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:background="@drawable/ic_launcher_round"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_mine_help_teacher_course"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top" />
+
+    <TextView
+        android:id="@+id/tv_mine_help_teacher_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/homepage_teacher_name"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintLeft_toRightOf="@+id/iv_mine_help_teacher"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top" />
+
+    <TextView
+        android:id="@+id/tv_mine_help_teacher_honor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/homepage_teacher_honor"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_mine_help_teacher_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_name" />
+
+    <TextView
+        android:id="@+id/tv_mine_help_teacher_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/teacher_course"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_mine_help_teacher_honor"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_honor" />
+
+    <View
+        android:id="@+id/view_mine_help_line_center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_2dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:background="@color/TextColorBlack"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_course" />
+
+    <TextView
+        android:id="@+id/tv_mine_help_teacher_help_price"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/mine_help_check_price"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintLeft_toLeftOf="@+id/view_mine_help_line_center"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_center" />
+
+    <TextView
+        android:id="@+id/tv_mine_help_playback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:drawableTop="@drawable/mine_help_playback"
+        android:gravity="center"
+        android:text="@string/mine_help_playback"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_mine_help_teacher_course"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top" />
+
+    <TextView
+        android:id="@+id/bt_mine_help_obligation_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/mine_help_obligation_price"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_center" />
+
+    <Button
+        android:id="@+id/mine_help_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:background="@color/red_answer"
+        android:text="@string/mine_help_pay"
+        android:textColor="@color/TextColorWhite"
+        android:textSize="@dimen/font_large_size"
+        app:layout_constraintRight_toRightOf="@+id/bt_mine_help_obligation_price"
+        app:layout_constraintTop_toBottomOf="@+id/bt_mine_help_obligation_price" />
+</android.support.constraint.ConstraintLayout>
