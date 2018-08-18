@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include_contact"
+        layout="@layout/actionbar_layout"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include_contact">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_help_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/help_type"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:checked="true"
+                        android:text="@string/homepage_operation_check"
+                        android:textColor="@color/red_answer"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_help"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dimen_20dp"
+                        android:text="@string/homepage_homework_help"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/homepage_select_detail"
+                    android:textColor="@color/TextColorGray"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFDBDBDB" />
+
+                <ImageView
+                    android:id="@+id/iv_upload_pic"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/ic_launcher" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_add_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"></android.support.v4.view.ViewPager>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/please_upload_pic"
+                    android:textColor="@color/TextColorGray"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFDBDBDB" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_check_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_check_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="17.5dp"
+                        android:text="@string/homework_check_price"
+                        android:textColor="#FFA9A9A9"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_check_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="25dp"
+                        android:text="@string/homework_check_money"
+                        android:textColor="#FF333333"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_check_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="1dp"
+                        android:layout_toLeftOf="@+id/tv_check_money"
+                        android:src="@drawable/homework_check_add" />
+
+                    <Button
+                        android:id="@+id/bt_check_money"
+                        android:layout_width="80.5dp"
+                        android:layout_height="@dimen/dimen_27dp"
+                        android:layout_marginRight="11.5dp"
+                        android:layout_toLeftOf="@+id/iv_check_add"
+                        android:background="@drawable/homework_check_bt_shape"
+                        android:text="20"
+                        android:textColor="#FF333333"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_check_minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="11.5dp"
+                        android:layout_toLeftOf="@+id/bt_check_money"
+                        android:background="@drawable/homework_check_minus" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:text="@string/help_price_suggest"
+                    android:textColor="@color/TextColorGray"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="80dp"
+                    >
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#FFDBDBDB" />
+
+                    <ImageView
+                        android:id="@+id/iv_teacher_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_teacher_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_toRightOf="@+id/iv_teacher_icon"
+                        android:text="@string/homepage_teacher_name"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_teacher_course"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_teacher_name"
+                        android:layout_marginBottom="@dimen/dimen_10dp"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_toRightOf="@+id/iv_teacher_icon"
+                        android:text="@string/teacher_course"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/bt_teacher_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/common_color_Y4"
+                        android:text="@string/homepage_cables_teacher"
+                        android:textColor="@color/TextColorWhite"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_help_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/teacher_help_price_details"
+                        android:textColor="@color/red_answer"
+                        android:textSize="12sp"
+                        android:visibility="invisible"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

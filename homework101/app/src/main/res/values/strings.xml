@@ -1023,5 +1023,13 @@ swipe the screen to unlock"</string>
     <string name="confirm_sure">确定</string>
     <string name="homework_select_time">选择时间</string>
     <string name="select_grade">选择年级</string>
-
+    <string name="teacher_help_price">辅导价格</string>
+    <string name="teacher_help_price_details">2.50元/分钟</string>
+    <string name="time">今天18：00</string>
+    <string name="wait_to_help">等待接受辅导</string>
+    <string name="wait_to_help_count_down">距离辅导开始剩余时间</string>
+    <string name="wait_to_help_count_down_details">02:35:48</string>
+    <string name="help_type">辅导类型</string>
+    <string name="please_upload_pic">*请上传你要辅导的作业图片*</string>
+    <string name="help_price_suggest">请根据您的作业的题数及难易程度，设置一个合理的价格。</string>
 </resources>
