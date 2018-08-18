@@ -532,7 +532,7 @@
         <item>volume_nothing</item>
         <item>volume_really_nothing</item>
     </string-array>
-    <string-array name="preference_grade_school">
+    <string-array name="preference_primary_course">
         <item>语文</item>
         <item>数学</item>
         <item>英语</item>
@@ -542,5 +542,12 @@
         <item>待付款</item>
         <item>已完成</item>
         <item>已取消</item>
+    </string-array>
+    <string-array name="preference_primary_class">
+        <item>一年级</item>
+        <item>二年级</item>
+        <item>三年级</item>
+        <item>四年级</item>
+        <item>五年级</item>
     </string-array>
 </resources>

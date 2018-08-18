@@ -204,14 +204,12 @@ on this device"</string>
     <string name="commit_homework_notify">正在为你分配最优秀的老师中！</string>
     <string name="commit_images">提交作业照片 <font color="#b7b7b7">(最多三张)</font>" "</string>
     <string name="common_label_yesterday">昨天</string>
-    <string name="confirm_cancel">取消</string>
     <string name="confirm_charge">确认充值</string>
     <string name="confirm_delete">删除</string>
     <string name="confirm_delete_ask">确认删除吗?</string>
     <string name="confirm_no">否</string>
     <string name="confirm_ok">好的</string>
     <string name="confirm_pay">确认支付</string>
-    <string name="confirm_sure">确定</string>
     <string name="confirm_title">提示</string>
     <string name="confirm_yes">是</string>
     <string name="consult">咨询</string>
@@ -353,7 +351,6 @@ on this device"</string>
     <string name="good_evaluate">好评(%1$d)</string>
     <string name="grade">年级</string>
     <string name="grade_six">六年级</string>
-    <string name="grade_two">二年级</string>
     <string name="grade_you_in">您所在的年级</string>
     <string name="guide_introduction">汇聚名师的趣味学习</string>
     <string name="has_bind">已绑定</string>
@@ -720,11 +717,6 @@ Privacy Policy: Location permission is required for geotagging, but this is disa
     <string name="preference_white_balance">Set the white balance</string>
     <string name="preference_white_balance_summary">Choose a setting to adjust the white balance</string>
     <string name="preparing_card">Preparing card</string>
-    <string name="primary_school">小学</string>
-    <string name="primary_school_five">五年级</string>
-    <string name="primary_school_four">四年级</string>
-    <string name="primary_school_one">一年级</string>
-    <string name="primary_school_three">三年级</string>
     <string name="processing">加载中</string>
     <string name="professional">专家</string>
     <string name="professional_teacher">专家教师</string>
@@ -810,7 +802,6 @@ swipe the screen to unlock"</string>
     <string name="select_all">全选</string>
     <string name="select_classing_start_time">选择上课时间</string>
     <string name="select_focus_teacher">选择我关注的名师</string>
-    <string name="select_grade">选择年级</string>
     <string name="select_random_teacher_default_hint">推荐使用（快速返回讲解）</string>
     <string name="select_random_teacher_has_audio">已有讲解，此项不可用</string>
     <string name="select_random_teacher_has_requested">已请求讲解，此项不可用</string>
@@ -1015,5 +1006,22 @@ swipe the screen to unlock"</string>
     <string name="mine_help_check_price">检查价格：5.00元</string>
     <string name="mine_help_obligation_price">待付金额：￥5.00</string>
     <string name="mine_help_pay">去付款</string>
+    <string name="homework_check_time">现在</string>
+    <string name="primary_school">小学</string>
+    <string name="primary_school_five">五年级</string>
+    <string name="primary_school_four">四年级</string>
+    <string name="primary_school_one">一年级</string>
+    <string name="primary_school_three">三年级</string>
+    <string name="primary_school_two">二年级</string>
+    <string name="homework_check_course">科目</string>
+    <string name="homework_check_select_course">选择科目</string>
+    <string name="homework_check_price">检查价格</string>
+    <string name="homework_check_money">元</string>
+    <string name="homework_check_hint">温馨提示</string>
+    <string name="homework_check_release">确认发布</string>
+    <string name="confirm_cancel">取消</string>
+    <string name="confirm_sure">确定</string>
+    <string name="homework_select_time">选择时间</string>
+    <string name="select_grade">选择年级</string>
 
 </resources>

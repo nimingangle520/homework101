@@ -49,7 +49,7 @@ public class HomepageFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initData() {
-        grade_school = getActivity().getResources().getStringArray(R.array.preference_grade_school);
+        grade_school = getActivity().getResources().getStringArray(R.array.preference_primary_course);
         tb_homepage_teacher.addTab(tb_homepage_teacher.newTab().setText(grade_school[0]));
         tb_homepage_teacher.addTab(tb_homepage_teacher.newTab().setText(grade_school[1]));
         tb_homepage_teacher.addTab(tb_homepage_teacher.newTab().setText(grade_school[2]));

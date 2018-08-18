@@ -37,9 +37,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.shushan.homework101.Utils.LogUtils;
+import com.luck.picture.lib.entity.LocalMedia;
+import com.shushan.homework101.Constants;
 import com.shushan.homework101.R;
-import com.shushan.homework101.Utils.Utils;
+import com.shushan.homework101.Utils.LogUtils;
 import com.shushan.homework101.base.BaseActivity;
 
 import java.io.File;
@@ -47,6 +48,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.shushan.homework101.Constants.GALLERY_REQUEST_CODE;
 import static com.shushan.homework101.Constants.REQUEST_STORAGE_READ_ACCESS_PERMISSION;
@@ -69,7 +72,7 @@ public class TakePhoteActivity extends BaseActivity implements CameraPreview.OnC
     private String flashMode="auto";
     private ImageView iv_flash;
     private FocusView focusView;
-
+    private List<LocalMedia> selectList = new ArrayList<>();
     @Override
     protected void initContentView() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -80,7 +83,10 @@ public class TakePhoteActivity extends BaseActivity implements CameraPreview.OnC
 
     @Override
     protected void initData() {
-
+        Intent intent=getIntent();
+        if(intent!=null){
+            selectList=intent.getParcelableArrayListExtra("selectList");
+        }
     }
 
     @Override
@@ -101,8 +107,8 @@ public class TakePhoteActivity extends BaseActivity implements CameraPreview.OnC
     protected void initEvents() {
         mCameraPreview.setFocusView(focusView);
         mCameraPreview.setOnCameraStatusListener(this);
-        mCropImageView.setGuidelines(2);    }
-
+        mCropImageView.setGuidelines(2);
+    }
     boolean isRotated = false;
 
     @Override
@@ -120,7 +126,6 @@ public class TakePhoteActivity extends BaseActivity implements CameraPreview.OnC
                 public void onAnimationStart(Animator animator) {
 
                 }
-
                 @Override
                 public void onAnimationEnd(Animator animator) {
                     hint_tv.setVisibility(View.GONE);
@@ -166,7 +171,11 @@ public class TakePhoteActivity extends BaseActivity implements CameraPreview.OnC
         }
     }
    public void selectPic(View view){
-       pickFromGallery();
+       //pickFromGallery();
+       Intent intent=new Intent(this,AddPicActivity.class);
+       intent.putExtra("type", Constants.TYPE_ALBUM);
+       intent.putParcelableArrayListExtra("selectList",(ArrayList)selectList);
+       startActivity(intent);
    }
     public void close(View view) {
         finish();
@@ -247,8 +256,9 @@ public class TakePhoteActivity extends BaseActivity implements CameraPreview.OnC
         CropperImage cropperImage = mCropImageView.getCroppedImage();
         LogUtils.e(cropperImage.getX() + "," + cropperImage.getY());
         LogUtils.e(cropperImage.getWidth() + "," + cropperImage.getHeight());
-        Bitmap bitmap = Utils.rotate(cropperImage.getBitmap(), -90);
-//        Bitmap bitmap = mCropImageView.getCroppedImage();
+        //Bitmap bitmap = Utils.rotate(cropperImage.getBitmap(), -90);
+        //Bitmap bitmap = mCropImageView.getCroppedImage();
+        Bitmap bitmap=cropperImage.getBitmap();
         // system time
         long dateTaken = System.currentTimeMillis();
         // picture name
@@ -258,12 +268,16 @@ public class TakePhoteActivity extends BaseActivity implements CameraPreview.OnC
                 filename, bitmap, null);
         cropperImage.getBitmap().recycle();
         cropperImage.setBitmap(null);
-        Intent intent = new Intent(this, ShowCropperedActivity.class);
+        Intent intent = new Intent(this,AddPicActivity.class);
         intent.setData(uri);
         intent.putExtra("path", PATH + filename);
         intent.putExtra("width", bitmap.getWidth());
         intent.putExtra("height", bitmap.getHeight());
         intent.putExtra("cropperImage", cropperImage);
+        intent.putExtra("type", Constants.TYPE_CAMERA);
+        if(selectList!=null&&selectList.size()>0){
+            intent.putParcelableArrayListExtra("selectList",(ArrayList)selectList);
+        }
         startActivity(intent);
         bitmap.recycle();
         finish();

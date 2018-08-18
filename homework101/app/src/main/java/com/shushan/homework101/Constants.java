@@ -7,4 +7,6 @@ public class Constants {
     public static final int CAMERA_REQUEST_CODE = 1;    // 相机拍照标记
     public static final int HOMEPAGR_TEACHER_TYPE=0;
     public static final int MINE_HELP_TYPE=1;
+    public static final int TYPE_CAMERA=100;
+    public static final int TYPE_ALBUM=200;
 }

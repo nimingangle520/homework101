@@ -63,6 +63,7 @@
     <color name="common_color_B5">#ff0077ff</color>
     <color name="common_color_B6">#ff3689d5</color>
     <color name="common_color_B7">#ff6495ed</color>
+    <color name="color_f6">#f6f6f6</color>
     <color name="common_color_G1">#ffdbdbdb</color>
     <color name="common_color_G10">#ffd2d2d2</color>
     <color name="common_color_G11">#ffdddddd</color>
@@ -123,6 +124,7 @@
     <color name="common_color_b0_4C_transparent">#4c000000</color>
     <color name="common_color_b0_7f_transparent">#7f000000</color>
     <color name="common_color_b0_80_transparent">#80000000</color>
+    <color name="common_color_b0_50_transparent">#50000000</color>
     <color name="common_color_b0_81_transparent">#b1000000</color>
     <color name="common_color_b1">#ff231815</color>
     <color name="common_color_b1_b2_transparent">#b2231815</color>
@@ -246,5 +248,7 @@
     <color name="wallet_tip_bg_color">@color/common_color_Y8</color>
     <color name="wallet_tip_text_color">@color/common_color_Y9</color>
     <color name="colorPrimary">#607d8b</color>
+    <color name="colorFontSelect">#FF000000</color>
+    <color name="colorFont">#FFB0B0B0</color>
 </resources>
 

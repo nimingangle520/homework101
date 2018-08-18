@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_select"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="bottom"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+     >
+      <TextView
+          android:background="#FFFFFF"
+          android:id="@+id/tv_pop_title"
+          android:textSize="16sp"
+          android:textColor="#000000"
+          android:text="@string/homework_select_time"
+          android:layout_marginTop="14.5dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          />
+      <TextView
+          android:id="@+id/tv_cancel"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:layout_marginLeft="15dp"
+          android:textSize="14sp"
+          android:textColor="#B0B0B0"
+          android:layout_alignBaseline="@+id/tv_pop_title"
+          android:text="@string/confirm_cancel" />
+
+      <TextView
+          android:id="@+id/tv_ensure"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:gravity="center"
+          android:layout_marginRight="15dp"
+          android:text="@string/confirm_sure"
+          android:textColor="#FF4F1B"
+          android:layout_alignBaseline="@+id/tv_pop_title"
+          android:textSize="14sp" />
+  </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#FFDBDBDB"
+        android:layout_marginTop="18.5dp"
+        />
+    <LinearLayout
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <com.shushan.homework101.homework.select.WheelView
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
