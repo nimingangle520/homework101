@@ -1032,4 +1032,22 @@ swipe the screen to unlock"</string>
     <string name="help_type">辅导类型</string>
     <string name="please_upload_pic">*请上传你要辅导的作业图片*</string>
     <string name="help_price_suggest">请根据您的作业的题数及难易程度，设置一个合理的价格。</string>
+    <string name="waiting_to_contact">正在等待对方接受邀请...</string>
+    <string name="teacher_score">评分</string>
+    <string name="teacher_score_details">4.5</string>
+    <string name="teacher_help_count">辅导次数</string>
+    <string name="teacher_help_count_details">1254</string>
+    <string name="teacher_help_duration">辅导时长</string>
+    <string name="teacher_help_duration_details">1478分钟</string>
+    <string name="teacher_request_to_contact_student">对方正在请求与你连线...</string>
+    <string name="contact_voice">语音通话中...</string>
+    <string name="cancel_help_cause">请说明您取消辅导的原因</string>
+    <string name="cause_one">我选错科目了</string>
+    <string name="cause_two">老师解答不了我的问题</string>
+    <string name="cause_three">老师不在线</string>
+    <string name="cause_four">我临时有事，不能接受辅导了</string>
+    <string name="cause_five">我下错单了，想重新下单</string>
+    <string name="homework_review">老师正在审题，审题阶段的时间不收费</string>
+    <string name="homework_speaker">老师开始讲题了,\n要认真听讲哦!</string>
 </resources>
+
