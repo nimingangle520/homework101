@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/please_upload_pic"
+                android:text="@string/help_please_upload_pic"
                 android:textColor="@color/TextColorGray"
                 android:textSize="12sp" />
 

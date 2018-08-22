@@ -43,8 +43,14 @@
         <activity android:name=".login.SetNewpasswordActivity" />
         <activity android:name=".mine.PersonalInformationActivity" />
         <activity android:name=".mine.ContactActivity" />
-        <activity android:name=".mine.HelpActivity" />
-        <activity android:name=".homework.AddPicActivity"></activity>
+        <activity android:name=".mine.tutorship.HelpActivity" />
+        <activity android:name=".homework.AddPicActivity" />
+        <activity android:name=".live.EvaluateActivity" />
+        <activity android:name=".teacher.TeacherDetailsActivity" />
+        <activity android:name=".mine.tutorship.TutorshipDetailsActivity" />
+        <activity android:name=".mine.tutorship.GoPaymentPopupWindows" />
+        <activity android:name=".mine.wallet.WalletActivity" />
+        <activity android:name=".mine.wallet.BillActivity"></activity>
     </application>
 
 </manifest>

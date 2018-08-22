@@ -1,4 +1,4 @@
-package com.shushan.homework101.mine;
+package com.shushan.homework101.mine.tutorship;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

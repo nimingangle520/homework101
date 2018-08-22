@@ -550,4 +550,15 @@
         <item>四年级</item>
         <item>五年级</item>
     </string-array>
+    <string-array name="preference_evaluate_label">
+        <item>普通话标准</item>
+        <item>讲解通俗易懂</item>
+        <item>声音好听</item>
+        <item>口齿清晰</item>
+        <item>解题透彻</item>
+        <item>说话和蔼</item>
+        <item>讲题认真，能举一反三</item>
+        <item>上课从不拖拉</item>
+        <item>关心学习掌握情况</item>
+    </string-array>
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mine.wallet.BillActivity"
+    android:orientation="vertical"
+    android:id="@+id/ll_bill"
+    >
+    <include layout="@layout/actionbar_layout"></include>
+    <TextView
+        android:id="@+id/tv_bill_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size"
+        android:text="@string/mine_wallet_bill_time"
+        android:drawableRight="@drawable/arrow_down"
+        android:gravity="center"
+        />
+    <ListView
+        android:id="@+id/lv_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        ></ListView>
+</LinearLayout>

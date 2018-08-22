@@ -2,10 +2,10 @@ package com.shushan.homework101.homepage;
 
 import com.shushan.homework101.Constants;
 import com.shushan.homework101.base.BaseFragment;
-import com.shushan.homework101.mine.CanceledFragment;
-import com.shushan.homework101.mine.CompleteFragment;
-import com.shushan.homework101.mine.ObligationFragment;
-import com.shushan.homework101.mine.WholeHelpFragment;
+import com.shushan.homework101.mine.tutorship.CanceledFragment;
+import com.shushan.homework101.mine.tutorship.CompleteFragment;
+import com.shushan.homework101.mine.tutorship.ObligationFragment;
+import com.shushan.homework101.mine.tutorship.WholeHelpFragment;
 
 import java.util.HashMap;
 

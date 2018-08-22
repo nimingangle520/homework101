@@ -10,14 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.shushan.homework101.R;
-import com.shushan.homework101.bean.Teacher;
+import com.shushan.homework101.bean.TeacherBean;
+import com.shushan.homework101.mine.tutorship.MineTutorshipWholeInterface;
 
 import java.util.ArrayList;
 
 public class MineHelpListViewAdapter  extends BaseAdapter{
     private Context context;
-    private ArrayList<Teacher> teacherArrayList;
-    public MineHelpListViewAdapter(Context context, ArrayList<Teacher> teacherArrayList) {
+    private ArrayList<TeacherBean> teacherArrayList;
+    MineTutorshipWholeInterface mineTutorshipWholeInterface;
+    public MineHelpListViewAdapter(Context context, ArrayList<TeacherBean> teacherArrayList) {
         this.context=context;
         this.teacherArrayList=teacherArrayList;
     }
@@ -62,6 +64,12 @@ public class MineHelpListViewAdapter  extends BaseAdapter{
             viewHolder.tv_mine_help_teacher_help_price.setText(teacherArrayList.get(position).getCheckPrice());
 
         }
+        viewHolder.mine_help_pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              mineTutorshipWholeInterface.onPayClick();
+            }
+        });
         return convertView;
     }
     private class ViewHolder {
@@ -71,5 +79,8 @@ public class MineHelpListViewAdapter  extends BaseAdapter{
         TextView tv_mine_help_teacher_course;
         TextView tv_mine_help_teacher_help_price;
         Button mine_help_pay;
+    }
+    public void setOnItemClickListener(MineTutorshipWholeInterface mineTutorshipWholeInterface) {
+        this.mineTutorshipWholeInterface = mineTutorshipWholeInterface;
     }
 }

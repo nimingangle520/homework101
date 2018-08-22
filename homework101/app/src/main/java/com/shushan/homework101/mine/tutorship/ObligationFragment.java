@@ -1,19 +1,19 @@
-package com.shushan.homework101.mine;
+package com.shushan.homework101.mine.tutorship;
 
 import android.view.View;
 
 import com.shushan.homework101.R;
 import com.shushan.homework101.base.BaseFragment;
 
-public class CanceledFragment extends BaseFragment {
+public class ObligationFragment extends BaseFragment {
 
-    public CanceledFragment() {
+    public ObligationFragment() {
         // Required empty public constructor
     }
 
     @Override
     protected int getContentViewId() {
-        return R.layout.fragment_canceled;
+        return R.layout.fragment_obligation;
     }
 
     @Override

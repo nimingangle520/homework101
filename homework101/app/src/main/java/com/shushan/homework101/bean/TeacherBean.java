@@ -2,7 +2,7 @@ package com.shushan.homework101.bean;
 
 import java.io.Serializable;
 
-public class Teacher implements Serializable{
+public class TeacherBean implements Serializable{
 private String iconUri;
 private String name;
 private String honor;

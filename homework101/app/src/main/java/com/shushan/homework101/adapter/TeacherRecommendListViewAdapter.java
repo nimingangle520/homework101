@@ -10,14 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.shushan.homework101.R;
-import com.shushan.homework101.bean.Teacher;
+import com.shushan.homework101.bean.TeacherBean;
 
 import java.util.ArrayList;
 
 public class TeacherRecommendListViewAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<Teacher> teacherArrayList;
-    public TeacherRecommendListViewAdapter(Context context, ArrayList<Teacher> teacherArrayList) {
+    private ArrayList<TeacherBean> teacherArrayList;
+    public TeacherRecommendListViewAdapter(Context context, ArrayList<TeacherBean> teacherArrayList) {
         this.context=context;
         this.teacherArrayList=teacherArrayList;
     }

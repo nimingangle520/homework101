@@ -73,11 +73,6 @@ public abstract class BaseActivity extends Activity {
 	protected abstract void initContentView();
 
 	/**
-	 * 初始化
-	 */
-	protected abstract void initData();
-
-	/**
 	 * 初始化View
 	 */
 	protected abstract void initViews();
@@ -86,6 +81,11 @@ public abstract class BaseActivity extends Activity {
 	 * 初始化事件
 	 */
 	protected abstract void initEvents();
+
+	/**
+	 * 初始化
+	 */
+	protected abstract void initData();
 
 	/**
 	 * 请求权限

@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_time_select"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="bottom"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_48dp"
+        >
+        <TextView
+            android:id="@+id/tv_bill_time_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:textSize="@dimen/font_large_size"
+            android:textColor="#B0B0B0"
+            android:layout_alignBaseline="@+id/tv_pop_title"
+            android:text="@string/confirm_cancel"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_bill_time_ensure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:text="@string/confirm_sure"
+            android:textColor="#FF4F1B"
+            android:layout_alignBaseline="@+id/tv_pop_title"
+            android:textSize="@dimen/font_large_size"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#FFDBDBDB"
+        android:layout_marginTop="18.5dp"
+        />
+    <LinearLayout
+        android:id="@+id/tp_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <com.shushan.homework101.homework.select.WheelView
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <com.shushan.homework101.homework.select.WheelView
+            android:id="@+id/month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".teacher.TeacherDetailsActivity">
+
+    <include layout="@layout/actionbar_layout"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_teacher_icon"
+                    android:layout_width="@dimen/dimen_80dp"
+                    android:layout_height="@dimen/dimen_80dp"
+                    android:background="@drawable/ic_launcher_round" />
+
+                <TextView
+                    android:id="@+id/tv_teacher_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_toRightOf="@+id/iv_teacher_icon"
+                    android:text="@string/homepage_teacher_name"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_super_large_size" />
+
+                <TextView
+                    android:id="@+id/tv_teacher_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_teacher_name"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_toRightOf="@+id/iv_teacher_icon"
+                    android:text="@string/teacher_course"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <view
+                    android:id="@+id/view_line_one"
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/dimen_15dp"
+                    android:layout_below="@+id/tv_teacher_name"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:layout_toRightOf="@+id/tv_teacher_class"
+                    android:background="#FFDBDBDB"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_teacher_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_teacher_name"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_toRightOf="@+id/view_line_one"
+                    android:text="@string/homepage_teacher_honor"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <TextView
+                    android:id="@+id/tv_teacher_school_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_teacher_class"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_toRightOf="@+id/iv_teacher_icon"
+                    android:text="@string/teacher_school_age"
+                    android:textColor="@color/TextColorGray"
+                    android:textSize="@dimen/font_small_size" />
+
+                <Button
+                    android:id="@+id/btn_focus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/add_focus"
+                    android:textColor="@color/TextColorGray"
+                    android:textSize="@dimen/font_large_size" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <TextView
+                    android:id="@+id/tv_teacher_evaluate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:text="@string/homepage_teacher_grade"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <TextView
+                    android:id="@+id/tv_teacher_students"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/teacher_students"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <TextView
+                    android:id="@+id/tv_teacher_fans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:text="@string/teacher_fans"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+            </RelativeLayout>
+
+            <view
+                android:id="@+id/view_line_two"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0.5dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="#FFDBDBDB"></view>
+
+            <LinearLayout
+                android:id="@+id/ll_teacher_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_frame"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_teacher_tutorship_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:text="@string/teacher_help_price_details"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="@dimen/font_large_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_teacher_tutorship_price"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:text="@string/teacher_help_price"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="@dimen/font_large_size" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_frame"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_tutorship_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:text="@string/teacher_help_duration_details"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="@dimen/font_large_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_tutorship_duration"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:text="@string/teacher_help_duration"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="@dimen/font_large_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_check_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:gravity="center"
+                        android:text="@string/teacher_check_count_details"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="@dimen/font_large_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_check_count"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:text="@string/teacher_check_count"
+                        android:textColor="@color/TextColorBlack"
+                        android:textSize="@dimen/font_large_size" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/iv_teacher_authentication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/login_agree"
+                    android:gravity="center"
+                    android:text="@string/teacher_authentication"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <TextView
+                    android:id="@+id/iv_teacher_honor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/login_agree"
+                    android:gravity="center"
+                    android:text="@string/teacher_honor"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <TextView
+                    android:id="@+id/iv_teacher_saqa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/login_agree"
+                    android:gravity="center"
+                    android:text="@string/teacher_saqa"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <TextView
+                    android:id="@+id/iv_teacher_expertise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/login_agree"
+                    android:gravity="center"
+                    android:text="@string/teacher_expertise"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_personal_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="@string/teacher_personal_introduce"
+                android:textColor="@color/TextColorBlack"
+                android:textSize="@dimen/font_large_size" />
+
+            <TextView
+                android:id="@+id/tv_teacher_personal_introduce_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/teacher_personal_introduce_details"
+                android:textColor="@color/TextColorBlack"
+                android:textSize="@dimen/font_large_size" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp">
+
+                <TextView
+                    android:id="@+id/tv_teacher_apprise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/teacher_apprise"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <ImageView
+                    android:id="@+id/iv_teacher_arrow_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/actionbar_arrow_right" />
+
+                <TextView
+                    android:id="@+id/tv_teacher_apprise_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/iv_teacher_arrow_right"
+                    android:text="@string/more"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+            </RelativeLayout>
+
+            <view
+                android:id="@+id/view_line_three"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0.5dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="#FFDBDBDB"></view>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+                <ImageView
+                    android:id="@+id/iv_student_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_launcher_round" />
+
+                <TextView
+                    android:id="@+id/tv_student_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_toRightOf="@+id/iv_student_icon"
+                    android:text="@string/mine_name"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size" />
+
+                <ImageView
+                    android:id="@+id/iv_teacher_evaluate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_student_name"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_toRightOf="@+id/iv_student_icon"
+                    android:background="@drawable/teacher_star5_universal" />
+
+                <TextView
+                    android:id="@+id/tv_student_apprise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_teacher_evaluate"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_toRightOf="@+id/iv_student_icon"
+                    android:text="@string/teacher_student_apprise"
+                    android:textColor="@color/TextColorBlack"
+                    android:textSize="@dimen/font_large_size"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_tutorship_tme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/teacher_tutorship_time"
+                    android:textColor="@color/TextColorGray"
+                    android:textSize="@dimen/font_small_size"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/iv_teacher_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_60dp"
+                android:background="@color/common_color_Y4"
+                android:text="@string/homepage_cables_teacher"
+                android:textColor="@color/TextColorWhite"
+                android:textSize="@dimen/font_large_size" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

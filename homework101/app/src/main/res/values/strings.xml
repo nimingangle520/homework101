@@ -448,8 +448,6 @@ Privacy Policy: Location permission is required for geotagging, but this is disa
     <string name="mime_copyright">版权声明</string>
     <string name="mine_center">个人中心</string>
     <string name="moments_content_count">0/150</string>
-    <string name="money">金额</string>
-    <string name="more">更多</string>
     <string name="more_vip_function_developing">更多会员服务正在开发中，敬请期待...</string>
     <string name="my_answer_be_accept">答案被采纳，奖励%1$s积分</string>
     <string name="my_ask_answer_count">%1$s人回答，等待你采纳</string>
@@ -466,7 +464,6 @@ Privacy Policy: Location permission is required for geotagging, but this is disa
     <string name="my_phy">物理</string>
     <string name="my_politics">政治</string>
     <string name="my_replay_pre">我的留言:</string>
-    <string name="my_wallet_recharge">充值</string>
     <string name="my_wallet_tc">网上充值</string>
     <string name="my_wallet_tips">建议提前充值，遇到难题就能直接听讲解啦~</string>
     <string name="name">昵称</string>
@@ -525,14 +522,12 @@ Privacy Policy: Location permission is required for geotagging, but this is disa
     <string name="password">密码</string>
     <string name="password_errot_service">密码错误。如有疑问，请拨打 400-816-1991 咨询</string>
     <string name="password_login">密码登录</string>
-    <string name="pay_alipay">支付宝支付</string>
     <string name="pay_failed">支付失败</string>
     <string name="pay_for_wallet">钱包支付</string>
     <string name="pay_result_check">查看课程</string>
     <string name="pay_result_tips">您没有添加联系电话，为了方便老师联系您，请添加电话号码</string>
     <string name="pay_success">支付成功</string>
     <string name="pay_the_money">付款</string>
-    <string name="pay_weixin">微信支付</string>
     <string name="people_comming_end">人听过他的课</string>
     <string name="people_unit">几个人了</string>
     <string name="permisoon_title">权限请求</string>
@@ -752,7 +747,6 @@ Privacy Policy: Location permission is required for geotagging, but this is disa
     <string name="recharge_coin_options">学习币套餐</string>
     <string name="recharge_money">%1$s元</string>
     <string name="recharge_parse_error">服务器返回的数据解析异常</string>
-    <string name="recharge_pay_mode">支付方式</string>
     <string name="recharge_pay_ok">立即支付</string>
     <string name="recharge_tc">使用网上充值</string>
     <string name="recharge_vip_card">会员卡充值</string>
@@ -948,7 +942,7 @@ swipe the screen to unlock"</string>
     <string name="login_please_input_phone_number">请输入手机号</string>
     <string name="login_please_input_password">请重新输入密码</string>
     <string name="login_agree">我已阅读并同意</string>
-    <string name="login_agree_service">xxx服务协议</string>
+    <string name="login_agree_service">《xxx服务协议》</string>
     <string name="login_login">登录</string>
     <string name="login_register">注册</string>
     <string name="login_forget_password">忘记密码</string>
@@ -1030,9 +1024,9 @@ swipe the screen to unlock"</string>
     <string name="wait_to_help_count_down">距离辅导开始剩余时间</string>
     <string name="wait_to_help_count_down_details">02:35:48</string>
     <string name="help_type">辅导类型</string>
-    <string name="please_upload_pic">*请上传你要辅导的作业图片*</string>
+    <string name="help_please_upload_pic">*请上传你要辅导的作业图片*</string>
     <string name="help_price_suggest">请根据您的作业的题数及难易程度，设置一个合理的价格。</string>
-    <string name="waiting_to_contact">正在等待对方接受邀请...</string>
+    <string name="help_waiting_to_contact">正在等待对方接受邀请...</string>
     <string name="teacher_score">评分</string>
     <string name="teacher_score_details">4.5</string>
     <string name="teacher_help_count">辅导次数</string>
@@ -1049,5 +1043,50 @@ swipe the screen to unlock"</string>
     <string name="cause_five">我下错单了，想重新下单</string>
     <string name="homework_review">老师正在审题，审题阶段的时间不收费</string>
     <string name="homework_speaker">老师开始讲题了,\n要认真听讲哦!</string>
+    <item name="tag_key_data" type="id" />
+    <item name="tag_key_position" type="id" />
+    <string name="evaluate_label">标签</string>
+    <string name="evaluate">评价</string>
+    <string name="evaluate_hint">多行输入</string>
+    <string name="pay">支付</string>
+    <string name="pay_the_check_price">本次检查价格</string>
+    <string name="pay_the_check_price_details">5.5元</string>
+    <string name="pay_sum_owing">应付金额</string>
+    <string name="pay_mode">支付方式</string>
+    <string name="pay_remaining_sum">余额</string>
+    <string name="teacher_school_age">6年教龄，华中师范大学毕业</string>
+    <string name="teacher_students">学生人数 288</string>
+    <string name="teacher_fans">粉丝 69</string>
+    <string name="teacher_check_count">作业检查次数</string>
+    <string name="teacher_check_count_details">1473次</string>
+    <string name="teacher_authentication">身份认证</string>
+    <string name="teacher_honor">教师资质</string>
+    <string name="teacher_saqa">学历认证</string>
+    <string name="teacher_expertise">专业技能</string>
+    <string name="teacher_personal_introduce">个人简介</string>
+    <string name="teacher_personal_introduce_details">岁月如梭，你若安好，便是晴天。岁月如梭，你若安好，便是晴天。岁月如梭，你若安好，便是晴天。岁月如梭，你若安好，便是晴天。岁月如梭，你若安好，便是晴天。</string>
+    <string name="teacher_apprise">评价(145)</string>
+    <string name="money">金额</string>
+    <string name="more">更多</string>
+    <string name="teacher_student_apprise">如果无法间接的表达你的想法，那只说明你还不够了解它。</string>
+    <string name="teacher_tutorship_time">2018-07-18 10:46</string>
+    <string name="mine_help_done">已完成</string>
+    <string name="mine_tutorship_teacher">我的老师</string>
+    <string name="mine_tutorship_duration">辅导时长：12:08</string>
+    <string name="mine_tutorship_amount_paid">已付金额：5.80元</string>
+    <string name="mine_tutorship_contact_again">再次连线</string>
+    <string name="mine_pay_go_payment">去付款</string>
+    <string name="mine_pay_balance">余额支付</string>
+    <string name="mine_pay_available_balance">可用余额：100.00元</string>
+    <string name="mine_pay_weixin">微信支付</string>
+    <string name="mine_pay_alipay">支付宝支付</string>
+    <string name="mine_pay_ensure">确定支付</string>
+    <string name="mine_wallet_bill">账单</string>
+    <string name="mine_wallet_account_balance">账户余额</string>
+    <string name="mine_wallet_recharge">充值</string>
+    <string name="mine_wallet_notification">注意事项</string>
+    <string name="mine_wallet_notification_one">1.你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。</string>
+    <string name="mine_wallet_notification_two">2.你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。</string>
+    <string name="mine_wallet_bill_time">2018年07月</string>
 </resources>
 

@@ -5,6 +5,7 @@
     <color name="TextColorBlack">#ff000000</color>
     <color name="TextColorGray">#ff505050</color>
     <color name="TextColorWhite">#ffffffff</color>
+    <color name="TextColorRed">#ffff0600</color>
     <color name="ToastBgColor">#ff424242</color>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#ff7fa87f</color>

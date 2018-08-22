@@ -5,6 +5,8 @@ import android.widget.RelativeLayout;
 
 import com.shushan.homework101.R;
 import com.shushan.homework101.base.BaseFragment;
+import com.shushan.homework101.mine.tutorship.HelpActivity;
+import com.shushan.homework101.mine.wallet.WalletActivity;
 
 import butterknife.Bind;
 
@@ -59,6 +61,7 @@ public class FragmentMine extends BaseFragment implements View.OnClickListener{
                 BaseFragment.startActivitys(mContext,HelpActivity.class);
                 break;
             case R.id.rl_mine_wallet:
+                startActivitys(mContext, WalletActivity.class);
                 break;
             case R.id.rl_mine_use_help:
                 break;

@@ -53,7 +53,7 @@
         android:id="@+id/tv_wait_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/waiting_to_contact"
+        android:text="@string/help_waiting_to_contact"
         android:textColor="@color/TextColorBlack"
         android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
