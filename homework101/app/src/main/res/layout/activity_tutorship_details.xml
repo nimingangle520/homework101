@@ -39,7 +39,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_tutorship_time"
         app:layout_constraintRight_toRightOf="parent"
         />
-    <view
+    <View
         android:id="@+id/view_line_one"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_0.5dp"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view_line_one"
         android:layout_marginTop="@dimen/dimen_10dp"
         />
-    <view
+    <View
         android:id="@+id/view_line_two"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_0.5dp"
@@ -67,11 +67,12 @@
         />
     <ImageView
         android:id="@+id/iv_teacher_icon"
-        android:layout_width="@dimen/dimen_80dp"
-        android:layout_height="@dimen/dimen_80dp"
+        android:layout_width="@dimen/dimen_60dp"
+        android:layout_height="@dimen/dimen_60dp"
         android:background="@drawable/ic_launcher_round"
         app:layout_constraintTop_toBottomOf="@+id/view_line_two"
-        android:layout_marginTop="@dimen/dimen_10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_teacher_class"
+        app:layout_constraintTop_toTopOf="@+id/tv_teacher_name"
         />
     <TextView
         android:id="@+id/tv_teacher_name"
@@ -95,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_teacher_name"
         app:layout_constraintLeft_toRightOf="@+id/iv_teacher_icon"
         android:layout_marginLeft="@dimen/dimen_10dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_5dp"
         />
     <TextView
         android:id="@+id/tv_teacher_class"
@@ -107,9 +108,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_teacher_honor"
         app:layout_constraintLeft_toRightOf="@+id/iv_teacher_icon"
         android:layout_marginLeft="@dimen/dimen_10dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_5dp"
         />
-    <view
+    <View
         android:id="@+id/view_line_three"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_0.5dp"
@@ -165,14 +166,13 @@
         app:constraint_referenced_ids="view_video_bg,iv_video,tv_tutorship_duration,tv_amount_paid"
         android:visibility="visible"
         />
-    <view
+    <View
         android:id="@+id/view_line_four"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_0.5dp"
         android:background="#FFDBDBDB"
         app:layout_constraintTop_toTopOf="@+id/btn_contact_service"
         />
-
     <Button
         android:id="@+id/btn_contact_service"
         android:layout_width="0dp"
@@ -199,7 +199,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/btn_contact_service"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintHorizontal_weight="2"
         android:layout_marginRight="@dimen/dimen_10dp"
         />
 </android.support.constraint.ConstraintLayout>

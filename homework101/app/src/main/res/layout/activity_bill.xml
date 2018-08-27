@@ -16,7 +16,7 @@
         android:textColor="@color/TextColorBlack"
         android:textSize="@dimen/font_large_size"
         android:text="@string/mine_wallet_bill_time"
-        android:drawableRight="@drawable/arrow_down"
+        android:drawableRight="@drawable/select_time_arrow_down"
         android:gravity="center"
         />
     <ListView

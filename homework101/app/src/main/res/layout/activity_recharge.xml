@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mine.wallet.RechargeActivity">
+
+    <include
+        android:id="@+id/include_recharge"
+        layout="@layout/actionbar_layout"></include>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/mine_recharge_yin_pin"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp">
+
+        <EditText
+            android:id="@+id/editTxt_recharge_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_bg"
+            android:hint="0.00"
+            android:maxLines="1"
+            android:minHeight="@dimen/dimen_30dp"
+            android:minWidth="@dimen/dimen_100dp"
+            android:textColorHint="@color/TextColorGray"
+            android:inputType="numberDecimal"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_toRightOf="@+id/editTxt_recharge_amount"
+            android:text="@string/homework_check_money"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="@dimen/font_large_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/mine_recharge_or"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_10dp">
+
+        <Button
+            android:id="@+id/btn_fifty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mine_recharge_fifty"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="@dimen/font_large_size" />
+
+        <Button
+            android:id="@+id/btn_one_hundred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:text="@string/mine_recharge_one_hundred"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="@dimen/font_large_size" />
+
+        <Button
+            android:id="@+id/btn_two_hundred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:text="@string/mine_recharge_two_hundred"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="@dimen/font_large_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_10dp">
+
+        <Button
+            android:id="@+id/btn_five_hundred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mine_recharge_five_hundred"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="@dimen/font_large_size" />
+
+        <Button
+            android:id="@+id/btn_one_thousand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:text="@string/mine_recharge_one_thousand"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="@dimen/font_large_size" />
+
+        <Button
+            android:id="@+id/btn_two_thousand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:text="@string/mine_recharge_two_thousand"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="@dimen/font_large_size" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_select_pay_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/mine_recharge_select_payment_method"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_120dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_wechat_payment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_120dp"
+            android:layout_marginLeft="@dimen/dimen_30dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg">
+
+            <TextView
+                android:id="@+id/tv_wechat_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableTop="@drawable/wechat"
+                android:text="@string/mine_pay_weixin"
+                android:textColor="@color/TextColorBlack"
+                android:textSize="@dimen/font_large_size"
+                android:drawablePadding="@dimen/dimen_10dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_alipay_payment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_120dp"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_30dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg">
+
+            <TextView
+                android:id="@+id/tv_alipay_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableTop="@drawable/alipay"
+                android:text="@string/mine_pay_alipay"
+                android:textColor="@color/TextColorBlack"
+                android:textSize="@dimen/font_large_size"
+                android:drawablePadding="@dimen/dimen_10dp"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_pay_ensure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_60dp"
+        android:layout_marginRight="@dimen/dimen_60dp"
+        android:layout_marginTop="@dimen/dimen_40dp"
+        android:background="@drawable/btn_bg"
+        android:text="@string/ensure"
+        android:textColor="@color/TextColorBlack"
+        android:textSize="@dimen/font_large_size" />
+</LinearLayout>

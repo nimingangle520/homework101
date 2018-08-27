@@ -100,7 +100,6 @@
     <string name="after_camera_explanation">在你拍题获得讲解之后，</string>
     <string name="after_get_explanation">在你获得习题集之后，</string>
     <string name="alert_delete">确认删除吗?</string>
-    <string name="all">全部</string>
     <string name="all_above_friends">以上是全部好友</string>
     <string name="all_grades">全部年级</string>
     <string name="all_grades_subjects">全部年级学科</string>
@@ -751,7 +750,6 @@ Privacy Policy: Location permission is required for geotagging, but this is disa
     <string name="recharge_tc">使用网上充值</string>
     <string name="recharge_vip_card">会员卡充值</string>
     <string name="recharge_wx">微信充值</string>
-    <string name="recharge_yin_pin">充值金额</string>
     <string name="recharing">付款中..</string>
     <string name="recommand_baby">"宝宝提示:
 1.每次只能选择一个科目。
@@ -1088,5 +1086,17 @@ swipe the screen to unlock"</string>
     <string name="mine_wallet_notification_one">1.你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。</string>
     <string name="mine_wallet_notification_two">2.你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。你若安好，便是晴天。</string>
     <string name="mine_wallet_bill_time">2018年07月</string>
+    <string name="mine_wallet_filter">筛选</string>
+    <string name="mine_wallet_transaction_type">交易类型</string>
+    <string name="all">全部</string>
+    <string name="mine_recharge_yin_pin">充值金额</string>
+    <string name="mine_recharge_or">或者</string>
+    <string name="mine_recharge_fifty">50元</string>
+    <string name="mine_recharge_one_hundred">100元</string>
+    <string name="mine_recharge_two_hundred">200元</string>
+    <string name="mine_recharge_five_hundred">500元</string>
+    <string name="mine_recharge_one_thousand">1000元</string>
+    <string name="mine_recharge_two_thousand">2000元</string>
+    <string name="mine_recharge_select_payment_method">选择支付方式</string>
 </resources>
 

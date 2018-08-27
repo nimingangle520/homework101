@@ -27,6 +27,10 @@ public class BillActivity extends BaseActivity implements View.OnClickListener{
     TextView tv_bill_time;
     @Bind(R.id.ll_bill)
     LinearLayout ll_bill;
+    @Bind(R.id.tv_right)
+    TextView tv_right;
+    @Bind(R.id.tv_actionbar)
+    TextView tv_actionbar;
     private WheelTimeSelect wheelTimeSelect;
     private DisplayMetrics displayMetrics;
     private int width;
@@ -35,6 +39,7 @@ public class BillActivity extends BaseActivity implements View.OnClickListener{
     private View menuView;
     private TextView tv_bill_time_cancel;
     private TextView tv_bill_time_ensure;
+    private BillFilterPopup billFilterPopup;
 
     @Override
     protected void initContentView() {
@@ -43,12 +48,17 @@ public class BillActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void initViews() {
+        tv_right.setVisibility(View.VISIBLE);
+        tv_right.setText(getResources().getString(R.string.mine_wallet_filter));
+        tv_actionbar.setText(getResources().getString(R.string.mine_wallet_bill));
+        billFilterPopup = new BillFilterPopup(mContext);
 
     }
 
     @Override
     protected void initEvents() {
         tv_bill_time.setOnClickListener(this);
+        tv_right.setOnClickListener(this);
     }
 
     @Override
@@ -64,6 +74,14 @@ public class BillActivity extends BaseActivity implements View.OnClickListener{
             case R.id.tv_bill_time:
                 showTimeSelectPopu();
                 break;
+                case R.id.tv_right:
+                    if(billFilterPopup!=null){
+                        if(billFilterPopup.isShowing()){
+                            billFilterPopup.dismiss();
+                        }
+                        billFilterPopup.showAsDropDown(ll_bill);
+                    }
+                    break;
         }
     }
     class popuDismissListener implements PopupWindow.OnDismissListener {
@@ -122,4 +140,5 @@ public class BillActivity extends BaseActivity implements View.OnClickListener{
         lp.alpha = bgAlpha;
         getWindow().setAttributes(lp);
     }
+
 }

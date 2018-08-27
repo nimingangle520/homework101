@@ -44,6 +44,7 @@ public class WalletActivity extends BaseActivity implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_recharge:
+                startActivitys(mContext,RechargeActivity.class);
                 break;
             case R.id.tv_right:
                 startActivitys(mContext,BillActivity.class);

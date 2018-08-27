@@ -50,7 +50,8 @@
         <activity android:name=".mine.tutorship.TutorshipDetailsActivity" />
         <activity android:name=".mine.tutorship.GoPaymentPopupWindows" />
         <activity android:name=".mine.wallet.WalletActivity" />
-        <activity android:name=".mine.wallet.BillActivity"></activity>
+        <activity android:name=".mine.wallet.BillActivity" />
+        <activity android:name=".mine.wallet.RechargeActivity"></activity>
     </application>
 
 </manifest>

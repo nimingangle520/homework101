@@ -68,5 +68,6 @@ public class WholeHelpFragment extends BaseFragment implements MineTutorshipWhol
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         LogUtils.d("onItemClick  adapter");
+        startActivitys(mContext,TutorshipDetailsActivity.class);
     }
 }
