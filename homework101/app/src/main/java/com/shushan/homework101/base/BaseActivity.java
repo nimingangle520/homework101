@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
+import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.Window;
 
@@ -22,6 +23,7 @@ public abstract class BaseActivity extends Activity {
 
 	protected Context mContext			= null;
 	private AlertDialog mAlertDialog;
+
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
 		mContext = this;
@@ -137,6 +139,18 @@ public abstract class BaseActivity extends Activity {
 		intent.putExtras(bundle);
 		context.startActivity(intent);
 
+	}
+	/**
+	 * 界面设置状态栏字体颜色
+	 */
+	public void changeStatusBarTextImgColor(boolean isBlack) {
+		if (isBlack) {
+			//设置状态栏黑色字体
+			getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+		} else {
+			//恢复状态栏白色字体
+			getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+		}
 	}
 
 }

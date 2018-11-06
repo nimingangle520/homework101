@@ -9,6 +9,13 @@
         android:id="@+id/lv_mine_help"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:dividerHeight="@dimen/y10"
+        android:layout_marginTop="@dimen/y10"
+        android:listSelector="@color/transparent"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
          />
 
 </FrameLayout>

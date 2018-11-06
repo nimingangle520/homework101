@@ -537,6 +537,17 @@
         <item>数学</item>
         <item>英语</item>
     </string-array>
+    <string-array name="preference_middle_school_course">
+        <item>语文</item>
+        <item>数学</item>
+        <item>英语</item>
+        <item>物理</item>
+        <item>化学</item>
+        <item>生物</item>
+        <item>历史</item>
+        <item>地理</item>
+        <item>道德与法治</item>
+    </string-array>
     <string-array name="preference_help_order">
         <item>全部</item>
         <item>待付款</item>
@@ -549,6 +560,10 @@
         <item>三年级</item>
         <item>四年级</item>
         <item>五年级</item>
+        <item>六年级</item>
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
     </string-array>
     <string-array name="preference_evaluate_label">
         <item>普通话标准</item>
@@ -561,4 +576,23 @@
         <item>上课从不拖拉</item>
         <item>关心学习掌握情况</item>
     </string-array>
+
+    <string-array name="teacher_select_honor">
+        <item>大学生</item>
+        <item>普通教师</item>
+        <item>初级教师</item>
+        <item>中级教师</item>
+        <item>高级教师</item>
+        <item>特级教师</item>
+    </string-array>
+
+    <string-array name="teacher_select_tutorship_price">
+        <item>0.8元/分钟</item>
+        <item>1.0元/分钟</item>
+        <item>1.6元/分钟</item>
+        <item>1.8元/分钟</item>
+        <item>2.0元/分钟</item>
+        <item>3.0元/分钟</item>
+    </string-array>
+
 </resources>

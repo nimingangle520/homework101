@@ -4,6 +4,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.shushan.homework101.R;
 import com.shushan.homework101.adapter.TeacherFragmentAdapter;
@@ -27,22 +29,29 @@ public class FragmentTeacher extends BaseFragment {
     private RecommendFragment recommendFragment;
     private FocusFragment focusFragment;
 
+
     public FragmentTeacher() {
         // Required empty public constructor
     }
 
     @Override
     protected int getContentViewId() {
+        changeStatusBarTextImgColor(true);
         return R.layout.fragment_teacher;
     }
 
     @Override
     public void initViews(View view) {
-
+        View mStatusBar = view.findViewById(R.id.teacher_fillStatusBarView);
+        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mStatusBar.getLayoutParams();
+        lp.width = RelativeLayout.LayoutParams.MATCH_PARENT;
+        lp.height = getStatusBarHeight(mContext);
+        mStatusBar.setLayoutParams(lp);
     }
 
     @Override
     protected void initData() {
+
         fragments = new ArrayList<>();
         recommendFragment = new RecommendFragment();
         focusFragment = new FocusFragment();
@@ -50,9 +59,9 @@ public class FragmentTeacher extends BaseFragment {
         fragments.add(focusFragment);
         teacher_classify = new String[]{mContext.getResources().getString(R.string.teacher_recommed),
                 mContext.getResources().getString(R.string.teacher_focus)};
-
         tl_teacher.addTab(tl_teacher.newTab().setText(teacher_classify[0]));
         tl_teacher.addTab(tl_teacher.newTab().setText(teacher_classify[1]));
+
     }
 
     @Override
@@ -96,11 +105,4 @@ public class FragmentTeacher extends BaseFragment {
             }
         });
     }
-    /*private List<String> getData() {
-        List<String> data = new ArrayList<String>();
-        for (int i = 0; i < 20; i++) {
-            data.add(i + "");
-        }
-        return data;
-    }*/
 }

@@ -251,5 +251,29 @@
     <color name="colorPrimary">#607d8b</color>
     <color name="colorFontSelect">#FF000000</color>
     <color name="colorFont">#FFB0B0B0</color>
+    <!--add start-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#252525</color>
+    <color name="grey">#FF4A4A4A</color>
+    <color name="line_bg">#D8D8D8</color>
+    <color name="login_et_bg">#FFA8A8</color>
+    <color name="register_captcha_bg">#FF7568</color>
+    <color name="register_captcha_font">#FFFF7568</color>
+    <color name="personal_details_bg">#FF6161</color>
+    <color name="homepage_bottom_navigation_bg">#FFFFFFFF</color>
+    <color name="homepage_bottom_navigation_font">#FF7568</color>
+    <color name="homepage_bottom_navigation_font_unselected">#B4B4B4</color>
+    <color name="font_color_select">#FF6161</color>
+    <color name="font_color_unselected">#808080</color>
+    <color name="homepage_teacher_honor_bg">#FF9E1F</color>
+    <color name="mine_homework_listview_bg">#F1F1F2</color>
+    <color name="mine_tutorship_font_color">#9B9B9B</color>
+    <color name="bottom_menu_btn_bg_common_color">#FFFFFF</color>
+    <color name="bottom_menu_btn_bg_press_color">#EEEEEE</color>
+    <color name="font_common_1">#424242</color>
+    <color name="font_common_2">#a1a1a1</color>
+    <color name="font_blue">#42369a</color>
+    <color name="commom_background">#f3f3f3</color>
+    <!--add end-->
 </resources>
 

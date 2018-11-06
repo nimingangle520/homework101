@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <ImageView
-        android:id="@+id/iv_homepage_teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:background="@drawable/ic_launcher_round"
+        android:id="@+id/iv_homepage_teacher_bg"
+        android:layout_width="@dimen/x58"
+        android:layout_height="@dimen/y58"
+        android:src="@drawable/homepage_teacher_visa_bg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_homepage_teacher_help_price"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/x31"
+
+        />
+
+    <com.shushan.homework101.banner.ImageViewRoundRect
+        android:id="@+id/iv_homepage_teacher"
+        android:layout_width="@dimen/x52"
+        android:layout_height="@dimen/y52"
+        android:src="@drawable/visa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/x34"
+
         />
     <TextView
         android:id="@+id/tv_homepage_teacher_name"
@@ -18,23 +33,26 @@
         android:layout_height="wrap_content"
         android:text="@string/homepage_teacher_name"
         android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
-        android:layout_marginStart="@dimen/dimen_10dp"
+        android:textSize="@dimen/sp_14"
+        android:layout_marginStart="@dimen/x8"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toRightOf="@+id/iv_homepage_teacher"
-        app:layout_constraintBottom_toBottomOf="@+id/bt_homepage_teacher_honor"
+        android:layout_marginTop="@dimen/y16"
+        app:layout_constraintLeft_toRightOf="@+id/iv_homepage_teacher_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_homepage_teacher_honor"
         />
-    <Button
-        android:id="@+id/bt_homepage_teacher_honor"
+    <TextView
+        android:id="@+id/tv_homepage_teacher_honor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@+id/tv_homepage_teacher_name"
         android:text="@string/homepage_teacher_honor"
-        android:textColor="@color/common_color_g1"
+        android:textColor="@color/homepage_teacher_honor_bg"
         android:layout_marginStart="@dimen/dimen_10dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/y18"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/homepage_teacher_honor_bg"
+        android:textSize="@dimen/sp_10"
+
         />
     <TextView
         android:id="@+id/tv_homepage_teacher_grade"
@@ -43,41 +61,75 @@
         android:text="@string/homepage_teacher_grade"
         app:layout_constraintTop_toBottomOf="@+id/tv_homepage_teacher_name"
         app:layout_constraintLeft_toLeftOf="@+id/tv_homepage_teacher_name"
-        android:textColor="@color/TextColorGray"
-        android:textSize="@dimen/font_small_size"
-        android:layout_marginTop="@dimen/dimen_10dp"
+        android:textColor="@color/font_color_unselected"
+        android:textSize="@dimen/sp_12"
+        android:layout_marginTop="@dimen/y1"
         />
     <TextView
         android:id="@+id/tv_homepage_teacher_help_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/homepage_teacher_help_count"
-        app:layout_constraintTop_toBottomOf="@+id/bt_homepage_teacher_honor"
-        app:layout_constraintLeft_toLeftOf="@+id/bt_homepage_teacher_honor"
-        android:textColor="@color/TextColorGray"
-        android:textSize="@dimen/font_small_size"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homepage_teacher_honor"
+      android:layout_marginLeft="@dimen/x13"
+        android:textColor="@color/font_color_unselected"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintLeft_toRightOf="@+id/tv_homepage_teacher_grade"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_homepage_teacher_grade"
+        android:layout_marginTop="@dimen/y4"
+        />
+    <TextView
+        android:id="@+id/tv_homepage_teacher_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homepage_teacher_grade"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_homepage_teacher_grade"
+        android:text="@string/homepage_teacher_help_price"
+        android:layout_marginTop="@dimen/y1"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/font_color_unselected"
         />
     <TextView
         android:id="@+id/tv_homepage_teacher_help_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv_homepage_teacher_grade"
-        app:layout_constraintLeft_toLeftOf="@+id/tv_homepage_teacher_grade"
-        android:text="@string/homepage_teacher_help_price"
-        android:layout_marginTop="@dimen/dimen_10dp"
+       app:layout_constraintLeft_toRightOf="@+id/tv_homepage_teacher_help"
+        android:text="@string/teacher_help_price_details"
+        android:layout_marginTop="@dimen/y1"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/font_color_select"
         />
-    <Button
-        android:id="@+id/bt_homepage_cables_teacher"
+    <ImageView
+        android:id="@+id/iv_homepage_cables_teacher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/tv_homepage_teacher_help_price"
-        app:layout_constraintTop_toTopOf="@+id/bt_homepage_teacher_honor"
-        android:layout_marginRight="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/connection_teacher"
+        android:layout_marginRight="@dimen/x32"
+        />
+    <TextView
+        android:id="@+id/tv_homepage_connect_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/homepage_cables_teacher"
-        android:textColor="@color/TextColorWhite"
-        android:background="@color/common_color_Y4"
-        android:textSize="@dimen/font_large_size"
+        android:textColor="@color/font_color_unselected"
+        app:layout_constraintTop_toBottomOf="@+id/iv_homepage_cables_teacher"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_homepage_cables_teacher"
+        android:textSize="@dimen/sp_10"
+        android:layout_marginTop="@dimen/y2"
+        />
+    <View
+        android:id="@+id/view_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homepage_teacher_help"
+        android:layout_marginRight="@dimen/x26"
+        android:layout_marginLeft="@dimen/x26"
+        android:layout_marginTop="@dimen/y13"
+        android:background="@color/line_bg"
+
         />
 </android.support.constraint.ConstraintLayout>

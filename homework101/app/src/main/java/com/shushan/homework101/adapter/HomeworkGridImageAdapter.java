@@ -132,6 +132,12 @@ public class HomeworkGridImageAdapter extends
                         list.remove(index);
                         notifyItemRemoved(index);
                         notifyItemRangeChanged(index, list.size());
+
+                        if(mDeleteClickListener!=null){
+
+                            mDeleteClickListener.onDeleteClick(index);
+
+                        }
                     }
                 }
             });
@@ -204,5 +210,15 @@ public class HomeworkGridImageAdapter extends
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.mItemClickListener = listener;
+    }
+
+    protected OnDeleteClickListener mDeleteClickListener;
+
+    public interface OnDeleteClickListener {
+        void onDeleteClick(int position);
+    }
+
+    public void setDeleteClickListener(OnDeleteClickListener listener) {
+        this.mDeleteClickListener = listener;
     }
 }

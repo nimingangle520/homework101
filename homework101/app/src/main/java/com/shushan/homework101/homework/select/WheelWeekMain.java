@@ -1,5 +1,6 @@
 package com.shushan.homework101.homework.select;
 
+import android.content.Context;
 import android.view.View;
 
 import com.shushan.homework101.R;
@@ -19,16 +20,20 @@ public class WheelWeekMain {
 	public int screenheight;
 	private boolean hasSelectTime;
 	List<String> dateList;
+	private Context context;
+
+
 	public View getView() {
 		return view;
 	}
 	public void setView(View view) {
 		this.view = view;
 	}
-	public WheelWeekMain(View view, boolean hasSelectTime) {
+	public WheelWeekMain(View view, boolean hasSelectTime,Context context) {
 		super();
 		this.view = view;
 		this.hasSelectTime = hasSelectTime;
+		this.context=context;
 		setView(view);
 	}
 	/**
@@ -109,12 +114,12 @@ public class WheelWeekMain {
 		wv_hours.setAdapter(new NumericWheelAdapter(
 				0, 23));
 		wv_hours.setCyclic(true);// 可循环滚动
-		wv_hours.setLabel("时");// 添加文字
+		wv_hours.setLabel(context.getResources().getString(R.string.hour));// 添加文字
 		wv_hours.setCurrentItem(h);
 		wv_mins.setAdapter(new NumericWheelAdapter(
 				0, 59));
 		wv_mins.setCyclic(true);// 可循环滚动
-		wv_mins.setLabel("分");// 添加文字
+		wv_mins.setLabel(context.getResources().getString(R.string.minute));// 添加文字
 		wv_mins.setCurrentItem(m);
 
 		// 根据屏幕密度来指定选择器字体的大小(不同屏幕可能不同)
@@ -141,7 +146,7 @@ public void formatDate(List<String> dateList, int y1, int i, int j){
 	}else {
 		strD = String.valueOf(j);
 	}
-	dateList.add(strM + "月" + strD + "日"+"    "+getWeek(y1+"-"+i+"-"+j));
+	dateList.add(strM + context.getResources().getString(R.string.month) + strD + context.getResources().getString(R.string.day)+"    "+getWeek(y1+"-"+i+"-"+j));
 }
 	private String getWeek(String pTime) {
 
@@ -157,25 +162,25 @@ public void formatDate(List<String> dateList, int y1, int i, int j){
 			e.printStackTrace();
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 1) {
-			Week += "星期天";
+			Week += context.getResources().getString(R.string.sunday);
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 2) {
-			Week += "星期一";
+			Week += context.getResources().getString(R.string.monday);
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 3) {
-			Week += "星期二";
+			Week += context.getResources().getString(R.string.tuesday);
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 4) {
-			Week += "星期三";
+			Week += context.getResources().getString(R.string.wednesday);
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 5) {
-			Week += "星期四";
+			Week += context.getResources().getString(R.string.thursday);
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 6) {
-			Week += "星期五";
+			Week += context.getResources().getString(R.string.friday);
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 7) {
-			Week += "星期六";
+			Week += context.getResources().getString(R.string.saturday);
 		}
 		return Week;
 	}
@@ -196,9 +201,9 @@ public void formatDate(List<String> dateList, int y1, int i, int j){
 			strMin = String.valueOf(minute);
 		}
 		if (!hasSelectTime) {
-			sb.append(dateList.get(wv_year.getCurrentItem())).append("  ").append(strHour).append(":").append(strMin);
+			sb.append(dateList.get(wv_year.getCurrentItem())).append(" ").append(strHour).append(context.getResources().getString(R.string.hour)).append(":").append(strMin).append(context.getResources().getString(R.string.minute));
 		}else{
-			sb.append(dateList.get(wv_year.getCurrentItem())).append("  ").append(strHour).append(":").append(strMin);
+			sb.append(dateList.get(wv_year.getCurrentItem())).append(" ").append(strHour).append(context.getResources().getString(R.string.hour)).append(":").append(strMin).append(context.getResources().getString(R.string.minute));
 		}
 		return sb.toString();
 	}

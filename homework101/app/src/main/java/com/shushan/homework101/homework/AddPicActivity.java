@@ -2,8 +2,10 @@ package com.shushan.homework101.homework;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,19 +19,30 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.permissions.RxPermissions;
 import com.luck.picture.lib.tools.PictureFileUtils;
 import com.shushan.homework101.Constants;
+import com.shushan.homework101.HttpHelper.service.entity.homework.JobCheck;
+import com.shushan.homework101.HttpHelper.service.entity.homework.JobTutorship;
+import com.shushan.homework101.HttpHelper.service.presenter.JobCheckPresenter;
+import com.shushan.homework101.HttpHelper.service.presenter.JobTutorshipPresenter;
+import com.shushan.homework101.HttpHelper.service.view.JobCheckView;
+import com.shushan.homework101.HttpHelper.service.view.JobTutorshipView;
 import com.shushan.homework101.R;
 import com.shushan.homework101.Utils.LogUtils;
 import com.shushan.homework101.adapter.HomeworkGridImageAdapter;
 import com.shushan.homework101.base.BaseActivity;
+import com.shushan.homework101.homework.clip.TakePhoteActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-public class AddPicActivity extends BaseActivity implements View.OnClickListener {
+import static com.shushan.homework101.Constants.HOMEWORK_ADD_REQUEST_CODE;
+import static com.shushan.homework101.Constants.HOMEWORK_BACK_REQUEST_CODE;
+
+public class AddPicActivity extends BaseActivity implements View.OnClickListener,HomeworkGridImageAdapter.OnDeleteClickListener{
     @Bind(R.id.iv_add_pic_back)
     ImageView iv_add_pic_back;
     @Bind(R.id.tv_add_pic_right)
@@ -49,8 +62,16 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
     private int height;
     private int type;
     private HomeworkCheckPopupWindow homeworkCheckPopupWindow;
+    private int homework_type;
+    private String userid;
+    private String token;
+    private JobCheckPresenter jobCheckPresenter;
+    private JobCheck mJobCheck;
+    private String[] picArrays;
+    private JobTutorshipPresenter jobTutorshipPresenter;
 
     protected void initContentView() {
+        changeStatusBarTextImgColor(true);
         setContentView(R.layout.activity_add_pic);
     }
     @Override
@@ -72,6 +93,13 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
                 localMedia.setWidth(width);
                 localMedia.setHeight(height);
                 selectList.add(0,localMedia);
+
+                picArrays=new String[selectList.size()];
+
+                for (int i = 0; i <selectList.size() ; i++) {
+                    picArrays[i]=selectList.get(i).getPath();
+                }
+
                 adapter.notifyDataSetChanged();
             }else if(type==Constants.TYPE_ALBUM) {
                 adapter.notifyDataSetChanged();
@@ -81,7 +109,18 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void initViews() {
-        homeworkCheckPopupWindow = new HomeworkCheckPopupWindow(AddPicActivity.this,ll_add_pic);
+        SharedPreferences sharedPreferences=getSharedPreferences("info",MODE_PRIVATE);
+        homework_type = sharedPreferences.getInt("homework_type",0);
+        userid = sharedPreferences.getString("userid","");
+        token = sharedPreferences.getString("token","");
+        LogUtils.d("userid:"+userid+"\ntoken:"+token);
+        jobCheckPresenter = new JobCheckPresenter(this);
+        jobCheckPresenter.onCreate(Constants.BASE_URL);
+        jobCheckPresenter.attachView(jobCheckView);
+        jobTutorshipPresenter = new JobTutorshipPresenter(this);
+        jobTutorshipPresenter.onCreate(Constants.BASE_URL);
+        jobTutorshipPresenter.attachView(jobTutorshipView);
+
         FullyGridLayoutManager manager = new FullyGridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
         recycler_add_pic.setLayoutManager(manager);
         adapter = new HomeworkGridImageAdapter(this, onAddPicClickListener);
@@ -94,6 +133,7 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
     protected void initEvents() {
         iv_add_pic_back.setOnClickListener(this);
         tv_add_pic_right.setOnClickListener(this);
+        adapter.setDeleteClickListener(this);
         adapter.setOnItemClickListener(new HomeworkGridImageAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, View v) {
@@ -146,6 +186,52 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
         });
     }
 
+    private JobTutorshipView jobTutorshipView=new JobTutorshipView() {
+        @Override
+        public void onSuccess(JobTutorship jobTutorship) {
+            if(jobTutorship!=null&&jobTutorship.getError()==0){
+
+                LogUtils.d(jobTutorship.toString());
+
+                homeworkCheckPopupWindow = new HomeworkCheckPopupWindow(AddPicActivity.this,ll_add_pic,homework_type,jobTutorship,picArrays);
+                if (homeworkCheckPopupWindow != null) {
+                    if (homeworkCheckPopupWindow.isShowing()) {
+                        homeworkCheckPopupWindow.dismiss();
+                    }
+                    homeworkCheckPopupWindow.showAsDropDown(ll_add_pic);
+                }
+            }
+        }
+
+        @Override
+        public void onError(String result) {
+
+        }
+    };
+    private JobCheckView jobCheckView = new JobCheckView() {
+        @Override
+        public void onSuccess(JobCheck jobCheck) {
+            if(jobCheck!=null&&jobCheck.getError()==0){
+
+                LogUtils.d(jobCheck.toString());
+                mJobCheck=jobCheck;
+                homeworkCheckPopupWindow = new HomeworkCheckPopupWindow(AddPicActivity.this,ll_add_pic,homework_type,jobCheck,picArrays);
+                if (homeworkCheckPopupWindow != null) {
+                    if (homeworkCheckPopupWindow.isShowing()) {
+                        homeworkCheckPopupWindow.dismiss();
+                    }
+                    homeworkCheckPopupWindow.showAsDropDown(ll_add_pic);
+                }
+            }
+        }
+
+        @Override
+        public void onError(String result) {
+            LogUtils.d(result.toString());
+
+        }
+    };
+
     private HomeworkGridImageAdapter.onAddPicClickListener onAddPicClickListener = new HomeworkGridImageAdapter.onAddPicClickListener() {
         @Override
         public void onAddPicClick() {
@@ -170,10 +256,11 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
                         .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
                         .selectionMedia(selectList)// 是否传入已选图片
                         .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
+
             }else{
                 Intent intent=new Intent(AddPicActivity.this,TakePhoteActivity.class);
                 intent.putParcelableArrayListExtra("selectList",(ArrayList)selectList);
-                startActivity(intent);
+                startActivityForResult(intent, HOMEWORK_ADD_REQUEST_CODE);
             }
         }
 
@@ -185,14 +272,15 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
             case R.id.iv_add_pic_back:
                 Intent intent = new Intent(AddPicActivity.this, TakePhoteActivity.class);
                 intent.putParcelableArrayListExtra("selectList", (ArrayList) selectList);
-                startActivity(intent);
+                startActivityForResult(intent,HOMEWORK_BACK_REQUEST_CODE);
                 break;
             case R.id.tv_add_pic_right:
-                if (homeworkCheckPopupWindow != null) {
-                    if (homeworkCheckPopupWindow.isShowing()) {
-                        homeworkCheckPopupWindow.dismiss();
+                if(!TextUtils.isEmpty(userid)&&!TextUtils.isEmpty(token)&&picArrays!=null&&picArrays.length>=1){
+                    if(homework_type==1){
+                        jobCheckPresenter.getJobCheckMsg(userid,token);
+                    }else{
+                        jobTutorshipPresenter.getJobTutorshipMsg(userid,token);
                     }
-                    homeworkCheckPopupWindow.showAsDropDown(ll_add_pic);
                 }
                 break;
 
@@ -217,6 +305,38 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
                     }
                     adapter.setList(selectList);
                     adapter.notifyDataSetChanged();
+
+                    picArrays=new String[selectList.size()];
+
+                    for (int i = 0; i <selectList.size() ; i++) {
+                        picArrays[i]=selectList.get(i).getPath();
+                    }
+                    break;
+                case HOMEWORK_BACK_REQUEST_CODE:
+                    if(data!=null){
+                        ArrayList<LocalMedia> selectList=data.getParcelableArrayListExtra("selectList");
+                        if(selectList!=null&&selectList.size()>0){
+                            LogUtils.d(selectList.toString());
+
+                            picArrays=new String[selectList.size()];
+                            for (int i = 0; i <selectList.size() ; i++) {
+                                picArrays[i]=selectList.get(i).getPath();
+                            }
+                        }
+                    }
+                    break;
+                case HOMEWORK_ADD_REQUEST_CODE:
+                    if(data!=null){
+                        ArrayList<LocalMedia> selectList=data.getParcelableArrayListExtra("selectList");
+                        if(selectList!=null&&selectList.size()>0){
+                            LogUtils.d(selectList.toString());
+
+                            picArrays=new String[selectList.size()];
+                            for (int i = 0; i <selectList.size() ; i++) {
+                                picArrays[i]=selectList.get(i).getPath();
+                            }
+                        }
+                    }
                     break;
             }
         }
@@ -231,8 +351,22 @@ public class AddPicActivity extends BaseActivity implements View.OnClickListener
     protected void onDestroy() {
         super.onDestroy();
         LogUtils.d("onDestroy");
-        /*if(selectList!=null&&selectList.size()>0){
-            selectList.clear();
-        }*/
+
+    }
+
+    @Override
+    public void onDeleteClick(int position) {
+        LogUtils.d("selectList.size():"+selectList.size());
+        if(picArrays!=null&&picArrays.length>0){
+            List<String> picList=Arrays.asList(picArrays);
+            ArrayList<String> arrayPicList=new ArrayList<>(picList);
+            arrayPicList.remove(position);
+            picArrays=new String[arrayPicList.size()];
+            for (int i = 0; i <arrayPicList.size() ; i++) {
+
+                picArrays[i]= arrayPicList.get(i);
+            }
+            LogUtils.d("picArrays.size():"+Arrays.toString(picArrays));
+        }
     }
 }

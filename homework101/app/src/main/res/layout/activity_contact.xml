@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.shushan.homework101.mine.ContactActivity">
 
     <include
@@ -14,24 +15,31 @@
         android:id="@+id/iv_mine_contact_logo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/ic_launcher"
-        app:layout_constraintTop_toBottomOf="@+id/include_mine_contact" />
+        android:src="@drawable/images_custom_service"
+        app:layout_constraintTop_toBottomOf="@+id/include_mine_contact"
+        android:layout_marginTop="@dimen/y66"
+        />
+
 
     <ImageView
         android:id="@+id/iv_mine_contact_qq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher"
-        app:layout_constraintTop_toBottomOf="@+id/iv_mine_contact_logo" />
+        android:background="@drawable/qq"
+        app:layout_constraintTop_toBottomOf="@+id/iv_mine_contact_logo"
+        android:layout_marginTop="@dimen/y70"
+        android:layout_marginLeft="@dimen/x23"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
     <TextView
         android:id="@+id/tv_mine_contact_qq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginLeft="@dimen/x14"
         android:text="@string/mine_contact_qq"
-        android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@+id/iv_mine_contact_qq"
         app:layout_constraintLeft_toRightOf="@+id/iv_mine_contact_qq"
         app:layout_constraintTop_toTopOf="@+id/iv_mine_contact_qq" />
@@ -39,10 +47,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_marginRight="@dimen/x23"
         android:text="@string/mine_contact_qq_detail"
-        android:textColor="@color/TextColorGray"
-        android:textSize="@dimen/font_large_size"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@+id/iv_mine_contact_qq"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_mine_contact_qq" />
@@ -50,25 +58,31 @@
     <View
         android:id="@+id/view_mine_contact_qq_line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:background="@color/black50"
+        android:layout_height="@dimen/y1"
+        android:background="@color/line_bg"
+        android:layout_marginTop="@dimen/y18"
+        android:layout_marginLeft="@dimen/x19"
+        android:layout_marginRight="@dimen/x19"
         app:layout_constraintTop_toBottomOf="@+id/iv_mine_contact_qq"
         />
     <ImageView
         android:id="@+id/iv_mine_contact_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher"
+        android:background="@drawable/telephone"
+        android:layout_marginLeft="@dimen/x23"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/y18"
         app:layout_constraintTop_toBottomOf="@+id/view_mine_contact_qq_line" />
 
     <TextView
         android:id="@+id/tv_mine_contact_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginLeft="@dimen/x14"
         android:text="@string/mine_contact_phone"
-        android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
         app:layout_constraintBottom_toBottomOf="@+id/iv_mine_contact_phone"
         app:layout_constraintLeft_toRightOf="@+id/iv_mine_contact_phone"
         app:layout_constraintTop_toTopOf="@+id/iv_mine_contact_phone" />
@@ -76,19 +90,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_marginRight="@dimen/x23"
         android:text="@string/mine_contact_phone_detail"
-        android:textColor="@color/TextColorGray"
+        android:textColor="@color/black"
         android:textSize="@dimen/font_large_size"
         app:layout_constraintBottom_toBottomOf="@+id/iv_mine_contact_phone"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_mine_contact_phone" />
 
-    <View
-        android:id="@+id/view_mine_contact_phone_line"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:background="@color/black50"
-        app:layout_constraintTop_toBottomOf="@+id/iv_mine_contact_phone"
-        />
 </android.support.constraint.ConstraintLayout>

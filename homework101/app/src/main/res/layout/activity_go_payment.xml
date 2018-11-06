@@ -7,29 +7,40 @@
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
     tools:context=".mine.tutorship.GoPaymentPopupWindows"
-    android:background="@color/white"
+    android:background="@drawable/tab_bg"
     >
 <TextView
     android:id="@+id/tv_go_payment"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textColor="@color/TextColorBlack"
-    android:textSize="@dimen/font_super_large_size"
-    android:text="@string/mine_pay_go_payment"
+    android:textSize="@dimen/sp_16"
+    android:text="@string/pay"
+    android:textStyle="bold"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    android:layout_marginTop="@dimen/dimen_15dp"
+    android:layout_marginTop="@dimen/y12"
     />
     <ImageView
         android:id="@+id/iv_cancel_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/cancel"
+        android:background="@drawable/delete"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/x21"
         app:layout_constraintBottom_toBottomOf="@+id/tv_go_payment"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/y21"
+        />
+
+    <View
+        android:id="@+id/view_pay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_go_payment"
+        android:layout_marginTop="@dimen/y11"
+        android:background="@color/line_bg"
         />
 
     <TextView
@@ -37,28 +48,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pay_sum_owing"
-        android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintTop_toBottomOf="@+id/iv_cancel_pay"
-        android:layout_marginTop="@dimen/dimen_40dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintTop_toBottomOf="@+id/view_pay"
+        android:layout_marginTop="@dimen/y10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:drawableLeft="@drawable/release_price"
+        android:layout_marginLeft="@dimen/x26"
+        android:drawablePadding="@dimen/x8"
         />
     <TextView
         android:id="@+id/tv_pay_sum_owing_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5.5+2.50*1478=3640.5"
-        android:textColor="@color/TextColorRed"
-        android:textSize="@dimen/font_large_size"
+        android:textColor="@color/font_color_select"
+        android:textSize="@dimen/sp_16"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_pay_sum_owing"
+        android:layout_marginRight="@dimen/x25"
         />
     <View
         android:id="@+id/view_pay_line_one"
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FFDBDBDB"
+        android:layout_height="@dimen/y1"
+        android:background="@color/line_bg"
         app:layout_constraintTop_toBottomOf="@+id/tv_pay_sum_owing"
-        android:layout_marginTop="@dimen/dimen_15dp"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_marginRight="@dimen/x26"
+        android:layout_marginLeft="@dimen/x26"
         >
     </View>
 
@@ -67,166 +85,88 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pay_mode"
-        android:textColor="@color/TextColorGray"
-        android:textSize="@dimen/font_large_size"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
         app:layout_constraintTop_toBottomOf="@+id/view_pay_line_one"
-        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_marginLeft="@dimen/x27"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:drawableLeft="@drawable/payment_method"
+        android:drawablePadding="@dimen/x6"
         />
-    <View
-        android:id="@+id/view_pay_line_two"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FFDBDBDB"
+
+    <RadioButton
+        android:id="@+id/rb_balance_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pay_remaining_sum"
+        android:textColor="@color/font_color_select"
+        android:textSize="@dimen/sp_16"
+        android:paddingLeft="@dimen/x9"
+        android:checked="true"
+        android:buttonTint="@color/font_color_select"
         app:layout_constraintTop_toBottomOf="@+id/tv_pay_mode"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        >
-    </View>
-    <ImageView
-        android:id="@+id/iv_pay_balance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/balance"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_two"
-        app:layout_constraintTop_toTopOf="@+id/view_pay_line_two"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pay_line_three"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_marginLeft="@dimen/x55"
+        app:layout_constraintLeft_toLeftOf="parent"
         />
-    <TextView
-        android:id="@+id/tv_pay_balance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mine_pay_balance"
-        android:textSize="@dimen/font_large_size"
-        android:textColor="@color/TextColorBlack"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_two"
-        app:layout_constraintLeft_toRightOf="@+id/iv_pay_balance"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:layout_marginLeft="@dimen/dimen_10dp"
-        />
-    <TextView
-        android:id="@+id/tv_available_balance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/font_large_size"
-        android:textColor="@color/TextColorBlack"
-        android:text="@string/mine_pay_available_balance"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pay_balance"
-        app:layout_constraintLeft_toRightOf="@+id/iv_pay_balance"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:layout_marginLeft="@dimen/dimen_10dp"
-        />
-    <ImageView
-        android:id="@+id/iv_balance_ensure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_agree"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_two"
-        app:layout_constraintTop_toTopOf="@+id/view_pay_line_two"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pay_line_three"
-        />
-    <View
-        android:id="@+id/view_pay_line_three"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FFDBDBDB"
-        app:layout_constraintTop_toBottomOf="@+id/tv_available_balance"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        >
-    </View>
 
     <TextView
-        android:id="@+id/tv_pay_wechat"
+        android:id="@+id/rb_available_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pay_remaining_sum_default"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/font_color_unselected"
+        app:layout_constraintLeft_toRightOf="@+id/rb_balance_pay"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rb_balance_pay"
+        />
+
+    <RadioButton
+        android:id="@+id/rb_wechat_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/mine_pay_weixin"
-        android:textSize="@dimen/font_large_size"
-        android:textColor="@color/TextColorBlack"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_three"
-        app:layout_constraintLeft_toRightOf="@+id/iv_pay_balance"
-        android:layout_marginTop="@dimen/dimen_20dp"
-        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        android:paddingLeft="@dimen/x9"
+        android:buttonTint="@color/font_color_select"
+        app:layout_constraintTop_toBottomOf="@+id/rb_balance_pay"
+        android:layout_marginTop="@dimen/y17"
+        android:layout_marginLeft="@dimen/x55"
+        app:layout_constraintLeft_toLeftOf="parent"
         />
-    <ImageView
-        android:id="@+id/iv_pay_wechat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/wechat"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_three"
-        app:layout_constraintTop_toTopOf="@+id/view_pay_line_three"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pay_line_four"
-        />
-    <ImageView
-        android:id="@+id/iv_wechat_ensure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_agree"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_three"
-        app:layout_constraintTop_toTopOf="@+id/view_pay_line_three"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pay_line_four"
-        />
-    <View
-        android:id="@+id/view_pay_line_four"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FFDBDBDB"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pay_wechat"
-        android:layout_marginTop="@dimen/dimen_20dp"
-        >
-    </View>
 
-    <TextView
-        android:id="@+id/tv_pay_alipay"
+
+    <RadioButton
+        android:id="@+id/rb_alipay_pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/mine_pay_alipay"
-        android:textSize="@dimen/font_large_size"
-        android:textColor="@color/TextColorBlack"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_four"
-        app:layout_constraintLeft_toRightOf="@+id/iv_pay_alipay"
-        android:layout_marginTop="@dimen/dimen_20dp"
-        android:layout_marginLeft="@dimen/dimen_10dp"
-        />
-    <ImageView
-        android:id="@+id/iv_pay_alipay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/alipay"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_four"
-        app:layout_constraintTop_toTopOf="@+id/view_pay_line_four"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pay_line_five"
-        />
-    <ImageView
-        android:id="@+id/iv_alipay_ensure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_agree"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        android:paddingLeft="@dimen/x9"
+        app:layout_constraintLeft_toRightOf="@+id/rb_wechat_pay"
+        android:layout_marginLeft="@dimen/x55"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rb_wechat_pay"
+        android:layout_marginRight="@dimen/x58"
+        android:buttonTint="@color/font_color_select"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_four"
-        app:layout_constraintTop_toTopOf="@+id/view_pay_line_four"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pay_line_five"
         />
-    <View
-        android:id="@+id/view_pay_line_five"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FFDBDBDB"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pay_alipay"
-        android:layout_marginTop="@dimen/dimen_20dp"
-        >
-    </View>
     <Button
         android:id="@+id/btn_pay_ensure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/view_pay_line_five"
-        android:layout_marginTop="@dimen/dimen_30dp"
+        app:layout_constraintTop_toBottomOf="@+id/rb_alipay_pay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/y18"
         android:text="@string/mine_pay_ensure"
-        android:background="@color/red_answer"
-        android:textColor="@color/TextColorWhite"
+        android:background="@drawable/button_1"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_large_size"
-        android:layout_marginLeft="@dimen/dimen_10dp"
-        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/x48"
+        android:layout_marginRight="@dimen/x47"
+        android:layout_marginBottom="@dimen/y18"
         />
 
 </android.support.constraint.ConstraintLayout>

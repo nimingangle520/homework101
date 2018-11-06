@@ -54,7 +54,7 @@ public class WheelView extends View {
 	/** 项目文本颜色 */
 	private static final int ITEMS_TEXT_COLOR = 0xFF000000;
 
-	private static final int ADDITIONAL_ITEM_HEIGHT = 80;
+	private static final int ADDITIONAL_ITEM_HEIGHT = 60;
 
 	/** 文字字号 */
 	public int TEXT_SIZE;
@@ -69,7 +69,7 @@ public class WheelView extends View {
 	private static final int PADDING = 10;
 
 	/** 默认的可见的物品 */
-	private static final int DEF_VISIBLE_ITEMS = 3;
+	public static  int DEF_VISIBLE_ITEMS = 5;
 
 	// Wheel Values
 	private WheelAdapter adapter = null;
@@ -411,7 +411,7 @@ public class WheelView extends View {
 			centerDrawable = getContext().getResources().getDrawable(
 					R.drawable.wheel_val);
 		}
-		setBackgroundResource(R.drawable.wheel_bg);
+		//setBackgroundResource(R.drawable.wheel_bg);
 	}
 
 	/**

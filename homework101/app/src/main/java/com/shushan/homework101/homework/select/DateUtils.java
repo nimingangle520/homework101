@@ -248,7 +248,7 @@ public class DateUtils {
         int days = 0;  
   
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {  
-            arr[1] = 29; // ����2��29��  
+            arr[1] = 29; //
         }  
   
         try {  

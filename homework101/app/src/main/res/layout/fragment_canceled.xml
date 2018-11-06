@@ -5,9 +5,17 @@
     tools:context="com.shushan.homework101.mine.tutorship.CanceledFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/lv_mine_help_cancel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:dividerHeight="@dimen/y10"
+        android:layout_marginTop="@dimen/y10"
+        android:listSelector="@color/transparent"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
+        />
 
 </FrameLayout>

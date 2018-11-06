@@ -5,27 +5,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="com.shushan.homework101.mine.tutorship.HelpActivity">
-    <include
-        android:id="@+id/include_mine_help"
-        layout="@layout/actionbar_layout"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_tutorship_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y44"
+        >
+
+        <ImageView
+            android:id="@+id/iv_mine_tutorship_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x18"
+            android:paddingRight="@dimen/x10"
+            android:paddingTop="@dimen/y5"
+            android:paddingBottom="@dimen/y5"
+            android:src="@drawable/back" />
+
+        <LinearLayout
+            android:id="@+id/ll_mine_tutorship_homework_check"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x75"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_mine_tutorship_homework_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y12"
+                android:text="@string/homepage_operation_check"
+                android:textColor="@color/font_color_select"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view_mine_tutorship_homework_check"
+                android:layout_width="@dimen/x60"
+                android:layout_height="@dimen/y4"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/y6"
+                android:background="@drawable/mine_tutorship_indicator_bg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mine_tutorship_homework_tutorship"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x45"
+            android:layout_toRightOf="@+id/ll_mine_tutorship_homework_check"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_mine_tutorship_homework_tutorship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y12"
+                android:text="@string/homepage_homework_help"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view_mine_tutorship_homework_tutorship"
+                android:layout_width="@dimen/x60"
+                android:layout_height="@dimen/y4"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/y6"
+                android:background="@drawable/mine_tutorship_indicator_bg"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tl_mine_help"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:layout_height="@dimen/y40"
+        android:background="@color/white"
         app:tabGravity="fill"
-        app:tabIndicatorColor="@android:color/holo_green_light"
-        app:tabIndicatorHeight="2dp"
+        app:tabIndicatorHeight="0dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/TextColorWhite"
-        app:tabTextColor="@color/TextColorGray"
+        app:tabSelectedTextColor="@color/font_color_select"
+        app:tabTextAppearance="@style/MineTutorshipTabLayoutTextAppearance"
+        app:tabTextColor="@color/mine_tutorship_font_color"
         />
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_mine_help"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@+id/tl_mine_help"
-        android:layout_marginBottom="@dimen/dimen_56dp"
+        android:background="@color/mine_homework_listview_bg"
         />
 </LinearLayout>

@@ -4,24 +4,24 @@
     android:id="@+id/ll_add_pic"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".homework.AddPicActivity">
 
     <RelativeLayout
         android:id="@+id/rl_add_pic_title"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/bar_grey">
+        android:layout_height="@dimen/y44"
+       >
 
         <ImageView
             android:id="@+id/iv_add_pic_back"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:background="@color/transparent"
-            android:padding="15dp"
-            android:src="@drawable/picture_back"
+            android:layout_marginLeft="@dimen/x15"
+            android:src="@drawable/back"
+            android:padding="@dimen/x5"
             android:visibility="visible" />
 
         <TextView
@@ -32,9 +32,11 @@
             android:layout_centerVertical="true"
             android:ellipsize="end"
             android:maxEms="11"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:text="@string/homework_select_pic"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/tv_add_pic_right"
@@ -42,18 +44,17 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="@dimen/x18"
             android:gravity="center"
             android:text="@string/confirm_sure"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_add_pic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:overScrollMode="never" />
+        android:overScrollMode="never"
+        />
 </LinearLayout>

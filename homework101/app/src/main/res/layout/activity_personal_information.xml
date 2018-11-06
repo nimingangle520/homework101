@@ -2,92 +2,101 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_personal_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="com.shushan.homework101.mine.PersonalInformationActivity">
-<include layout="@layout/actionbar_layout"/>
+
+<include layout="@layout/actionbar_layout"
+    />
     <RelativeLayout
         android:id="@+id/rl_mine_personal_via"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/y68">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mine_personal_via"
-            android:textSize="@dimen/font_super_large_size"
+            android:textSize="@dimen/sp_16"
             android:textColor="@color/TextColorBlack"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x24"
             />
         <ImageView
             android:id="@+id/iv_mine_personal_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="@drawable/actionbar_arrow_right"
+            android:background="@drawable/arrow2_personal_information"
             android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x16"
             />
-        <ImageView
-            android:layout_width="@dimen/dimen_80dp"
-            android:layout_height="@dimen/dimen_80dp"
+        <com.shushan.homework101.banner.ImageViewRoundRect
+            android:id="@+id/iv_mine_personal_visa"
+            android:layout_width="@dimen/x46"
+            android:layout_height="@dimen/y46"
             android:layout_toLeftOf="@id/iv_mine_personal_arrow"
-            android:background="@drawable/ic_launcher_round"
+            android:src="@drawable/visa"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x11"
             />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:background="@color/black50" />
+        android:layout_height="@dimen/y1"
+        android:layout_marginLeft="@dimen/x20"
+        android:background="@color/line_bg" />
     <RelativeLayout
         android:id="@+id/rl_mine_personal_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y50"
         >
         <TextView
             android:id="@+id/tv_mine_personal_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mine_personal_name"
-            android:textSize="@dimen/font_super_large_size"
+            android:textSize="@dimen/sp_16"
             android:textColor="@color/TextColorBlack"
             android:layout_centerVertical="true"
-            />
-        <ImageView
-            android:id="@+id/iv_mine_personal_name_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/actionbar_arrow_right"
-            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/x24"
             />
         <TextView
+            android:id="@+id/tv_mine_personal_name_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/iv_mine_personal_name_arrow"
+           android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:text="@string/mine_name"
             android:textColor="@color/TextColorGray"
-            android:textSize="@dimen/font_large_size"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginRight="@dimen/x35"
             />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:background="@color/black50" />
+        android:layout_height="@dimen/y1"
+        android:background="@color/line_bg"
+        android:layout_marginLeft="@dimen/x20"
+        />
     <RelativeLayout
         android:id="@+id/rl_mine_personal_sex"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y50"
         >
         <TextView
             android:id="@+id/tv_mine_personal_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mine_personal_sex"
-            android:textSize="@dimen/font_super_large_size"
+            android:textSize="@dimen/sp_16"
             android:textColor="@color/TextColorBlack"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x24"
             />
         <RadioGroup
             android:layout_width="wrap_content"
@@ -95,14 +104,19 @@
             android:orientation="horizontal"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x35"
             >
             <RadioButton
                 android:id="@+id/rb_mine_personal_man"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/mine_personal_sex_man"
-                android:textColor="@color/TextColorGray"
-                android:textSize="@dimen/font_large_size"
+                android:textColor="@color/font_color_select"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginRight="@dimen/x34"
+                android:paddingLeft="@dimen/x9"
+                android:checked="true"
+                android:buttonTint="@color/font_color_select"
                 />
 
             <RadioButton
@@ -111,91 +125,103 @@
                 android:layout_height="wrap_content"
                 android:text="@string/mine_personal_sex_woman"
                 android:textColor="@color/TextColorGray"
-                android:textSize="@dimen/font_large_size"
+                android:textSize="@dimen/sp_16"
+                android:paddingLeft="@dimen/x9"
+                android:buttonTint="@color/font_color_select"
                 />
         </RadioGroup>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/actionbar_arrow_right"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:visibility="invisible"
-            />
+
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:background="@color/black50" />
+        android:layout_height="@dimen/y1"
+        android:background="@color/line_bg"
+        android:layout_marginLeft="@dimen/x20"
+        />
     <RelativeLayout
         android:id="@+id/rl_mine_personal_class"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y50"
         >
         <TextView
             android:id="@+id/tv_mine_personal_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mine_personal_class"
-            android:textSize="@dimen/font_super_large_size"
+            android:textSize="@dimen/sp_16"
             android:textColor="@color/TextColorBlack"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x24"
             />
         <ImageView
             android:id="@+id/iv_mine_class_name_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/actionbar_arrow_right"
+            android:background="@drawable/arrow2_personal_information"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x16"
             />
         <TextView
+            android:id="@+id/tv_mine_personal_class_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/iv_mine_class_name_arrow"
             android:layout_centerVertical="true"
             android:text="@string/mine_personal_class_detail"
             android:textColor="@color/TextColorGray"
-            android:textSize="@dimen/font_large_size"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginRight="@dimen/x10"
             />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:background="@color/black50" />
+        android:layout_height="@dimen/y1"
+        android:background="@color/line_bg"
+        android:layout_marginLeft="@dimen/x20"
+        />
 
     <RelativeLayout
         android:id="@+id/rl_mine_personal_region"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/y50"
         >
         <TextView
             android:id="@+id/tv_mine_personal_region"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mine_personal_region"
-            android:textSize="@dimen/font_super_large_size"
+            android:textSize="@dimen/sp_16"
             android:textColor="@color/TextColorBlack"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x24"
             />
         <ImageView
             android:id="@+id/iv_mine_personal_region_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/actionbar_arrow_right"
+            android:background="@drawable/arrow2_personal_information"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x16"
             />
         <TextView
+            android:id="@+id/tv_mine_personal_region_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/iv_mine_personal_region_arrow"
             android:layout_centerVertical="true"
             android:text="@string/mine_personal_region_detail"
             android:textColor="@color/TextColorGray"
-            android:textSize="@dimen/font_large_size"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginRight="@dimen/x10"
             />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:background="@color/black50" />
+        android:layout_height="@dimen/y1"
+        android:background="@color/line_bg"
+        android:layout_marginLeft="@dimen/x20"
+        />
 </LinearLayout>

@@ -203,4 +203,24 @@ public abstract class BaseFragment extends Fragment {
 		context.startActivity(intent);
 
 	}
+	/**
+	 * 界面设置状态栏字体颜色
+	 */
+	public void changeStatusBarTextImgColor(boolean isBlack) {
+		if (isBlack) {
+			//设置状态栏黑色字体
+			getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+		} else {
+			//恢复状态栏白色字体
+			getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+		}
+	}
+	public static int getStatusBarHeight(Context context) {
+		int result = 0;
+		int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+		if (resourceId > 0) {
+			result = context.getResources().getDimensionPixelSize(resourceId);
+		}
+		return result;
+	}
 }

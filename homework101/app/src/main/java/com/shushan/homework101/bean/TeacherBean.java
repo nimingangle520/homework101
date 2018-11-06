@@ -12,6 +12,60 @@ private String helpCount;
 private String course;
 private String exp;
 private String checkPrice;
+private String checkConut;
+private String form;
+private String defaultTurorshipPrice;
+private String defaultObligationPrice;
+private String time;
+private String state;
+
+    public String getCheckConut() {
+        return checkConut;
+    }
+
+    public void setCheckConut(String checkConut) {
+        this.checkConut = checkConut;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getDefaultObligationPrice() {
+        return defaultObligationPrice;
+    }
+
+    public void setDefaultObligationPrice(String defaultObligationPrice) {
+        this.defaultObligationPrice = defaultObligationPrice;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDefaultTurorshipPrice() {
+        return defaultTurorshipPrice;
+    }
+
+    public void setDefaultTurorshipPrice(String defaultTurorshipPrice) {
+        this.defaultTurorshipPrice = defaultTurorshipPrice;
+    }
+
+    public String getForm() {
+        return form;
+    }
+
+    public void setForm(String form) {
+        this.form = form;
+    }
 
     public String getCheckPrice() {
         return checkPrice;
@@ -87,13 +141,22 @@ private String checkPrice;
 
     @Override
     public String toString() {
-        return "teacher{" +
+        return "TeacherBean{" +
                 "iconUri='" + iconUri + '\'' +
                 ", name='" + name + '\'' +
                 ", honor='" + honor + '\'' +
                 ", grade='" + grade + '\'' +
                 ", helpPrice='" + helpPrice + '\'' +
                 ", helpCount='" + helpCount + '\'' +
+                ", course='" + course + '\'' +
+                ", exp='" + exp + '\'' +
+                ", checkPrice='" + checkPrice + '\'' +
+                ", checkConut='" + checkConut + '\'' +
+                ", form='" + form + '\'' +
+                ", defaultTurorshipPrice='" + defaultTurorshipPrice + '\'' +
+                ", defaultObligationPrice='" + defaultObligationPrice + '\'' +
+                ", time='" + time + '\'' +
+                ", state='" + state + '\'' +
                 '}';
     }
 }

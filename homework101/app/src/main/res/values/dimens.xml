@@ -456,8 +456,11 @@
     <item type="dimen" name="recharge_corner_radius">@dimen/dimen_50dp</item>
     <item type="dimen" name="red_cicle_radius_size">@dimen/dimen_16dp</item>
     <item type="dimen" name="search_corner_radius">@dimen/dimen_40dp</item>
+    <dimen name="sp_9">9.0sp</dimen>
     <dimen name="sp_10">10.0sp</dimen>
+    <dimen name="sp_11">11.0sp</dimen>
     <dimen name="sp_12">12.0sp</dimen>
+    <dimen name="sp_13">13.0sp</dimen>
     <dimen name="sp_14">14.0sp</dimen>
     <dimen name="sp_16">16.0sp</dimen>
     <dimen name="sp_18">18.0sp</dimen>

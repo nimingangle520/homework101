@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv_mine_homework_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x17"
+        android:layout_marginTop="@dimen/y8"
+        android:text="@string/mine_homework_class"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:id="@+id/tv_mine_homework_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_mine_homework_class"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/x13"
+        android:text="@string/homepage_release_homework_state"
+        android:textColor="@color/font_color_select"
+        android:textSize="@dimen/sp_14" />
+
+    <HorizontalScrollView
+        android:id="@+id/hcv_mine_homework"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y60"
+        android:layout_below="@+id/tv_mine_homework_state"
+        android:layout_marginLeft="@dimen/x17"
+        android:layout_marginTop="@dimen/y7"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <GridView
+                android:id="@+id/grid_mine_homework"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:numColumns="auto_fit"
+                android:stretchMode="spacingWidthUniform">
+            </GridView>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/view_mine_homework"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:layout_below="@+id/hcv_mine_homework"
+        android:layout_marginLeft="@dimen/x14"
+        android:layout_marginTop="@dimen/y12"
+        android:background="@color/line_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_mine_homework"
+        android:layout_marginRight="@dimen/x13"
+        android:layout_marginLeft="@dimen/x15"
+        >
+        <ImageView
+            android:id="@+id/iv_mine_homework_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/order_time"
+            android:layout_marginTop="@dimen/y10"
+            />
+        <TextView
+            android:id="@+id/tv_mine_homework_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_mine_homework_time"
+            android:text="2018-10-25 10:22"
+            android:layout_alignBaseline="@+id/tv_mine_homework_money_default"
+            android:layout_marginLeft="@dimen/x5"
+
+            />
+        <TextView
+            android:id="@+id/tv_mine_homework_money_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/mine_help_check_price_default"
+            android:textColor="@color/font_color_select"
+            android:textSize="@dimen/sp_14"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/y7"
+            android:layout_marginBottom="@dimen/y8"
+            />
+
+        <TextView
+            android:id="@+id/tv_mine_homework_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_mine_homework_money_default"
+            android:layout_toLeftOf="@+id/tv_mine_homework_money_default"
+            android:text="@string/mine_help_check_price"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

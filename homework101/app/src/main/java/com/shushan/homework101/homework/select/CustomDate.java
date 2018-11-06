@@ -1,8 +1,11 @@
 package com.shushan.homework101.homework.select;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 import android.view.View;
 
+import com.shushan.homework101.Constants;
 import com.shushan.homework101.R;
 
 import java.io.Serializable;
@@ -17,9 +20,10 @@ public class CustomDate implements Serializable {
   public int year;  
   public int month;  
   public int day;  
-  public int week;  
-    
-  public CustomDate(int year, int month, int day){
+  public int week;
+
+
+    public CustomDate(int year, int month, int day){
       if(month > 12){  
           month = 1;  
           year++;  
@@ -87,19 +91,34 @@ public class CustomDate implements Serializable {
         List<String> dataList;
         private Context context;
         private String [] arrays;
+        private int homework_type;
+        private  String check_grade;
+        private  String check_subject;
+        private  String tutorship_grade;
+        private  String tutorship_subject;
+        private int type;
         public View getView() {
             return view;
         }
         public void setView(View view) {
             this.view = view;
         }
-        public WheelMain(View view, boolean hasSelect, Context context) {
+        public WheelMain(View view, boolean hasSelect, Context context,int homework_type,int type) {
             super();
             this.view = view;
             this.hasSelect = hasSelect;
             this.context=context;
+            this.homework_type=homework_type;
+            this.type=type;
             setView(view);
+
+            SharedPreferences sharedPreferences=context.getSharedPreferences("info",Context.MODE_PRIVATE);
+            check_grade = sharedPreferences.getString("check_grade","");
+            check_subject = sharedPreferences.getString("check_subject","");
+            tutorship_grade = sharedPreferences.getString("tutorship_grade","");
+            tutorship_subject = sharedPreferences.getString("tutorship_subject","");
         }
+
         /**
          * @Description: TODO 弹出选择器
          */
@@ -111,7 +130,71 @@ public class CustomDate implements Serializable {
             wv_year.setAdapter(new WheelMainAdapter(
                     0, dataList.size(),dataList));
             wv_year.setCyclic(true);// 可循环滚动
-            wv_year.setCurrentItem(1);// 初始化时显示的数据
+
+            if(homework_type== 1){
+
+                if(type== Constants.TYPE_GRADE){
+
+                    if(!TextUtils.isEmpty(check_grade)){
+
+                        for (int i = 0; i <dataList.size() ; i++) {
+
+                            if(check_grade.equals(dataList.get(i))){
+                                wv_year.setCurrentItem(i);
+                            }
+                        }
+                    }else{
+
+                        wv_year.setCurrentItem(0);// 初始化时显示的数据
+                    }
+
+                }else{
+                    if(!TextUtils.isEmpty(check_subject)){
+
+                        for (int i = 0; i <dataList.size() ; i++) {
+
+                            if(check_subject.equals(dataList.get(i))){
+                                wv_year.setCurrentItem(i);
+                            }
+                        }
+                    }else{
+
+                        wv_year.setCurrentItem(0);// 初始化时显示的数据
+                    }
+                }
+            }else{
+
+                if(type== Constants.TYPE_GRADE){
+
+                    if(!TextUtils.isEmpty(tutorship_grade)){
+
+                        for (int i = 0; i <dataList.size() ; i++) {
+
+                            if(tutorship_grade.equals(dataList.get(i))){
+                                wv_year.setCurrentItem(i);
+                            }
+                        }
+                    }else{
+
+                        wv_year.setCurrentItem(0);// 初始化时显示的数据
+                    }
+
+                }else{
+                    if(!TextUtils.isEmpty(tutorship_subject)){
+
+                        for (int i = 0; i <dataList.size() ; i++) {
+
+                            if(tutorship_subject.equals(dataList.get(i))){
+                                wv_year.setCurrentItem(i);
+                            }
+                        }
+                    }else{
+
+                        wv_year.setCurrentItem(0);// 初始化时显示的数据
+                    }
+                }
+
+            }
             // 根据屏幕密度来指定选择器字体的大小(不同屏幕可能不同)
             int textSize = 0;
             if (hasSelect)
@@ -120,7 +203,7 @@ public class CustomDate implements Serializable {
                 textSize = (screenheight / 140) * 4;
             wv_year.TEXT_SIZE = textSize;
         }
-        public String getClassName(){
+        public String getName(){
             StringBuffer sb = new StringBuffer();
             if (!hasSelect) {
                 sb.append(dataList.get(wv_year.getCurrentItem()));

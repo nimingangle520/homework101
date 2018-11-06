@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x110"
+    android:layout_height="@dimen/y110">
+    <ImageView
+        android:id="@+id/iv_mine_tutorship_gridview_item"
+        android:layout_width="@dimen/x110"
+        android:layout_height="@dimen/y110"
+        android:src="@drawable/homework"
+        android:scaleType="fitXY"
+        />
+    <ImageView
+        android:id="@+id/iv_mine_tutorship_gridview_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/check"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/x4"
+        android:layout_marginBottom="@dimen/y4"
+        />
+</RelativeLayout>

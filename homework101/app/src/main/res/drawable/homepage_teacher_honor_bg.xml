@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/x22">
+            </corners>
+            <stroke android:width="@dimen/dimen_1dp"
+                android:color="@color/homepage_teacher_honor_bg">
+            </stroke>
+            <padding
+                android:left="@dimen/x7"
+                android:right="@dimen/x7"
+                android:top="@dimen/y1"
+                android:bottom="@dimen/y1"
+                >
+            </padding>
+        </shape>
+    </item>
+</layer-list>

@@ -521,10 +521,18 @@
     <style name="AppBaseThemeMain" parent="@android:style/Theme.Holo.NoActionBar">
         <item name="android:windowIsTranslucent">false</item>
     </style>
-    <style name="AppTheme" parent="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
+    <!--add  start-->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="AppTheme" />
+    <!--add  end-->
+
     <style name="AppThemeNotTranslucent" parent="@style/XxbAppTheme.Translucent">
         <item name="android:windowIsTranslucent">false</item>
     </style>
+
     <style name="Base.AlertDialog.AppCompat" parent="@android:style/Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="listLayout">@layout/abc_select_dialog_material</item>
@@ -1076,7 +1084,7 @@
     <style name="Base.Widget.Design.AppBarLayout" parent="@android:style/Widget">
         <item name="android:background">?colorPrimary</item>
     </style>
-    <style name="Base.Widget.Design.TabLayout" parent="@android:style/Widget">
+   <!-- <style name="Base.Widget.Design.TabLayout" parent="@android:style/Widget">
         <item name="tabIndicatorColor">?colorAccent</item>
         <item name="tabIndicatorHeight">2.0dip</item>
         <item name="tabBackground">?selectableItemBackground</item>
@@ -1085,7 +1093,7 @@
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
         <item name="tabPaddingStart">12.0dip</item>
         <item name="tabPaddingEnd">12.0dip</item>
-    </style>
+    </style>-->
     <style name="CustomTabPageIndicator.TextAppearance" parent="@style/Widget">
         <item name="android:textColor">#ff231815</item>
     </style>
@@ -1503,5 +1511,45 @@
     <style name="AnimationPreview">
         <item name="android:windowEnterAnimation">@anim/pop_push_up_in</item>
         <item name="android:windowExitAnimation">@anim/pop_push_down_out</item>
+    </style>
+
+    <style name="CustomTabLayoutTextAppearance"
+        parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <!--<item name="tabBackground">@drawable/tab_bg</item>-->
+        <item name="background">@color/white</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorHeight">@dimen/y4</item>
+        <item name="tabIndicatorColor">@color/font_color_select</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabSelectedTextColor">@color/font_color_select</item>
+        <item name="tabTextAppearance">@style/CustomTabLayoutTextAppearance</item>
+        <item name="tabTextColor">@color/font_color_unselected</item>
+    </style>
+
+    <style name="MineTutorshipTabLayoutTextAppearance"
+        parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!--边框-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--模糊-->
+
     </style>
 </resources>

@@ -5,31 +5,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.shushan.homework101.HttpHelper.service.entity.teachers.Recommend;
 import com.shushan.homework101.R;
-import com.shushan.homework101.bean.TeacherBean;
+import com.shushan.homework101.banner.ImageViewRoundRect;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TeacherRecommendListViewAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<TeacherBean> teacherArrayList;
-    public TeacherRecommendListViewAdapter(Context context, ArrayList<TeacherBean> teacherArrayList) {
+    private ArrayList<Recommend> recommends;
+    public TeacherRecommendListViewAdapter(Context context, ArrayList<Recommend> recommends) {
         this.context=context;
-        this.teacherArrayList=teacherArrayList;
+        this.recommends=recommends;
     }
 
     @Override
     public int getCount() {
-        return teacherArrayList.size();
+        return recommends.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return teacherArrayList.get(i);
+        return recommends.get(i);
     }
 
     @Override
@@ -43,36 +46,40 @@ public class TeacherRecommendListViewAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.teacher_recommend_listview_item, null);
             viewHolder = new ViewHolder();
-            viewHolder.iv_teacher_via = (ImageView) convertView.findViewById(R.id.iv_teacher_via);
+            viewHolder.iv_teacher_via = (ImageViewRoundRect) convertView.findViewById(R.id.iv_teacher_via);
             viewHolder.tv_teacher_name = (TextView) convertView.findViewById(R.id.tv_teacher_name);
-            viewHolder.tv_teacher_course = (TextView) convertView.findViewById(R.id.tv_teacher_course);
-            viewHolder.tv_teacher_exp = (TextView) convertView.findViewById(R.id.tv_teacher_exp);
-            viewHolder.tv_teacher_help_count = (TextView) convertView.findViewById(R.id.tv_teacher_help_count);
-            viewHolder.tv_teacher_help_price = (TextView) convertView.findViewById(R.id.tv_teacher_help_price);
-            viewHolder.bt_teacher_cables = (Button) convertView.findViewById(R.id.bt_teacher_cables);
+            viewHolder.tv_teacher_class = (TextView) convertView.findViewById(R.id.tv_teacher_class);
+            viewHolder.tv_teacher_subject = (TextView) convertView.findViewById(R.id.tv_teacher_subject);
+            viewHolder.tv_teacher_help_price_default = (TextView) convertView.findViewById(R.id.tv_teacher_help_price_default);
+            viewHolder.tv_teacher_cables = (TextView) convertView.findViewById(R.id.tv_teacher_cables);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
 
         }
-        if(teacherArrayList!=null&&teacherArrayList.size()>0){
-            //viewHolder.iv_teacher_via.setImageURI(Uri.parse(teacherArrayList.get(position).getIconUri()));
-            viewHolder.tv_teacher_name.setText(teacherArrayList.get(position).getName());
-            viewHolder.tv_teacher_course.setText(teacherArrayList.get(position).getCourse());
-            viewHolder.tv_teacher_exp.setText(teacherArrayList.get(position).getExp());
-            viewHolder.tv_teacher_help_count.setText(teacherArrayList.get(position).getHelpCount());
-            viewHolder.tv_teacher_help_price.setText(teacherArrayList.get(position).getHelpPrice());
+        if(recommends!=null&&recommends.size()>0){
+
+            RequestOptions options = new RequestOptions()
+                    .error(R.drawable.visa)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL);
+            Glide.with(context).load(recommends.get(position).getTrait()).apply(options).into(viewHolder.iv_teacher_via);
+            viewHolder.tv_teacher_name.setText(recommends.get(position).getTch_name());
+            viewHolder.tv_teacher_class.setText((Arrays.toString(recommends.get(position).getGrade()))
+                    .replaceAll(",","/")
+                    .replace("[","")
+                    .replace("]",""));
+            viewHolder.tv_teacher_subject.setText(recommends.get(position).getSubject());
+            viewHolder.tv_teacher_help_price_default.setText(recommends.get(position).getGuide_price()+context.getResources().getString(R.string.teacher_help_price_units));
 
         }
         return convertView;
     }
     private class ViewHolder {
-        ImageView iv_teacher_via;
+        ImageViewRoundRect iv_teacher_via;
         TextView tv_teacher_name;
-        TextView tv_teacher_course;
-        TextView tv_teacher_exp;
-        TextView tv_teacher_help_count;
-        TextView tv_teacher_help_price;
-        Button bt_teacher_cables;
+        TextView tv_teacher_class;
+        TextView tv_teacher_subject;
+        TextView tv_teacher_help_price_default;
+        TextView tv_teacher_cables;
     }
 }

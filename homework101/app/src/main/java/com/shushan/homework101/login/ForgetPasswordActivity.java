@@ -17,12 +17,13 @@ public class ForgetPasswordActivity extends BaseActivity implements View.OnClick
 
     @Override
     protected void initContentView() {
+        changeStatusBarTextImgColor(true);
         setContentView(R.layout.activity_forget_password);
     }
 
     @Override
     protected void initData() {
-        tv_actionbar.setText(R.string.login_forget_password);
+        tv_actionbar.setVisibility(View.GONE);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class ForgetPasswordActivity extends BaseActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_forget_password_next:
-                BaseActivity.startActivitys(this, SetNewpasswordActivity.class);
+                BaseActivity.startActivitys(this, SetNewPasswordActivity.class);
                 break;
         }
     }

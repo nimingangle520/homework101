@@ -14,16 +14,17 @@ public class HomepageFragmentAdapter extends FragmentStatePagerAdapter {
     //private List<Fragment> mFragments ;
     private List<String> mTitles ;
     private int type;
-    public HomepageFragmentAdapter(FragmentManager fm, List<String> titles,int type) {
+    public HomepageFragmentAdapter(FragmentManager fm, List<String> titles, int type) {
         super(fm);
         //mFragments = fragments;
         this.mTitles = titles;
         this.type=type;
+
     }
 
     @Override
     public Fragment getItem(int position) {
-        BaseFragment fragment = FragmentFactory.createFragment(position, type);
+        BaseFragment fragment =  FragmentFactory.createFragment(position, type);
         return fragment;
     }
 
@@ -36,5 +37,4 @@ public class HomepageFragmentAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         return mTitles.get(position);
     }
-
 }

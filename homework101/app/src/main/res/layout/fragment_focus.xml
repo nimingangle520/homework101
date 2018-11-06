@@ -9,6 +9,16 @@
         android:id="@+id/lv_teacher_focus"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/dimen_56dp" />
+        android:layout_marginBottom="@dimen/dimen_56dp"
+        android:layout_marginLeft="@dimen/x10"
+        android:layout_marginRight="@dimen/x10"
+        android:dividerHeight="@dimen/y10"
+        android:fadingEdgeLength="0dp"
+        android:fadingEdge="none"
+        android:divider="@null"
+        android:layout_marginTop="@dimen/y10"
+        android:listSelector="@color/transparent"
+        android:cacheColorHint="@color/transparent"
+        />
 
 </FrameLayout>

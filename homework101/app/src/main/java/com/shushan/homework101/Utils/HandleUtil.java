@@ -17,8 +17,8 @@ import android.content.Context;
 import android.util.Pair;
 import android.util.TypedValue;
 
-import com.shushan.homework101.homework.CropOverlayView;
-import com.shushan.homework101.homework.Handle;
+import com.shushan.homework101.homework.clip.CropOverlayView;
+import com.shushan.homework101.homework.clip.Handle;
 
 
 /**

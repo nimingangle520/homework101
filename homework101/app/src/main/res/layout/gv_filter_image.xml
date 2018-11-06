@@ -4,21 +4,27 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="115dp"
-        android:layout_height="120dp"
-        android:layout_centerInParent="true">
+        android:layout_width="@dimen/x119"
+        android:layout_height="@dimen/y119"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/y3"
+        android:layout_marginRight="@dimen/x3"
+        android:layout_marginLeft="@dimen/x3"
+        android:layout_marginBottom="@dimen/y3"
+        >
 
         <ImageView
             android:id="@+id/fiv"
-            android:layout_width="115dp"
-            android:layout_height="120dp"
+            android:layout_width="@dimen/x119"
+            android:layout_height="@dimen/y119"
             android:scaleType="centerCrop"
-            android:src="@color/color_f6" />
+            android:src="@color/color_f6"
+            />
 
         <LinearLayout
             android:id="@+id/ll_del"
-            android:layout_width="30dp"
-            android:layout_height="35dp"
+            android:layout_width="@dimen/x18"
+            android:layout_height="@dimen/y18"
             android:layout_alignParentRight="true"
             android:gravity="right"
             android:orientation="vertical">
@@ -28,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="center"
-                android:src="@drawable/delet_zhaopian_1x" />
+                android:src="@drawable/delete" />
         </LinearLayout>
 
         <TextView

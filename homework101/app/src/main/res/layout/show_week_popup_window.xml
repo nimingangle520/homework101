@@ -4,19 +4,19 @@
     android:layout_height="wrap_content"
     android:layout_centerInParent="true"
     android:layout_gravity="bottom"
-    android:background="#ffffff"
+    android:background="@drawable/tab_bg"
     android:orientation="vertical" >
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
      >
       <TextView
-          android:background="#FFFFFF"
           android:id="@+id/tv_time_title"
-          android:textSize="16sp"
-          android:textColor="#000000"
+          android:textSize="@dimen/sp_16"
+          android:textColor="@color/black"
+          android:textStyle="bold"
           android:text="@string/homework_select_time"
-          android:layout_marginTop="14.5dp"
+          android:layout_marginTop="@dimen/y11"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_centerHorizontal="true"
@@ -26,10 +26,11 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:gravity="center"
-          android:layout_marginLeft="15dp"
-          android:textSize="14sp"
-          android:textColor="#B0B0B0"
+          android:layout_marginLeft="@dimen/x17"
+          android:textSize="@dimen/sp_16"
+          android:textColor="@color/black"
           android:layout_alignBaseline="@+id/tv_pop_title"
+          android:layout_marginTop="@dimen/y11"
           android:text="@string/confirm_cancel" />
 
       <TextView
@@ -38,17 +39,19 @@
           android:layout_height="wrap_content"
           android:layout_alignParentRight="true"
           android:gravity="center"
-          android:layout_marginRight="15dp"
+          android:layout_marginRight="@dimen/x16"
           android:text="@string/confirm_sure"
-          android:textColor="#FF4F1B"
+          android:textColor="@color/homepage_bottom_navigation_font"
           android:layout_alignBaseline="@+id/tv_pop_title"
-          android:textSize="14sp" />
+          android:textSize="@dimen/sp_16"
+          android:layout_marginTop="@dimen/y11"
+          />
   </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#FFDBDBDB"
-        android:layout_marginTop="18.5dp"
+        android:layout_height="@dimen/y1"
+        android:background="@color/line_bg"
+        android:layout_marginTop="@dimen/y11"
         />
     <LinearLayout
         android:id="@+id/tp_time"

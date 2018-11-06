@@ -6,52 +6,101 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    -->
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/app"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
         <activity
-            android:name=".homework.TakePhoteActivity"
+            android:name=".MainActivity"
+            android:theme="@style/TranslucentTheme"
+            />
+        <activity
+            android:name=".homework.clip.TakePhoteActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:screenOrientation="nosensor" />
-        <activity android:name=".homework.ShowCropperedActivity" />
+        <activity android:name=".homework.clip.ShowCropperedActivity" />
 
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL}" />
+            android:value="${UMENG_CHANNEL_VALUE}" />
 
-        <activity android:name=".login.LoginActivity">
+        <activity
+            android:name=".login.LoginActivity"
+            android:theme="@style/TranslucentTheme">
+        </activity>
+        <activity
+            android:name=".login.RegisterActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".login.ForgetPasswordActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".login.SetNewPasswordActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".mine.PersonalInformationActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".mine.ContactActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".mine.tutorship.HelpActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".homework.AddPicActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity android:name=".live.EvaluateActivity" />
+        <activity android:name=".teacher.TeacherDetailsActivity" />
+        <activity
+            android:name=".mine.tutorship.TutorshipDetailsActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity android:name=".mine.wallet.WalletActivity" />
+        <activity android:name=".mine.wallet.BillActivity" />
+        <activity android:name=".mine.wallet.RechargeActivity" />
+        <activity
+            android:name=".login.PersonalDetailsActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".homepage.MineHomeworkActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".homepage.MyHomeworkDetailsActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.RegisterActivity" />
-        <activity android:name=".login.ForgetPasswordActivity" />
-        <activity android:name=".login.SetNewpasswordActivity" />
-        <activity android:name=".mine.PersonalInformationActivity" />
-        <activity android:name=".mine.ContactActivity" />
-        <activity android:name=".mine.tutorship.HelpActivity" />
-        <activity android:name=".homework.AddPicActivity" />
-        <activity android:name=".live.EvaluateActivity" />
-        <activity android:name=".teacher.TeacherDetailsActivity" />
-        <activity android:name=".mine.tutorship.TutorshipDetailsActivity" />
-        <activity android:name=".mine.tutorship.GoPaymentPopupWindows" />
-        <activity android:name=".mine.wallet.WalletActivity" />
-        <activity android:name=".mine.wallet.BillActivity" />
-        <activity android:name=".mine.wallet.RechargeActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/x47"></corners>
+    <stroke
+        android:width="@dimen/x2"
+        android:color="@color/homepage_bottom_navigation_font"></stroke>
+</shape>

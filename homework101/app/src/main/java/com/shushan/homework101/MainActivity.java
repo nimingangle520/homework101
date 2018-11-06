@@ -23,6 +23,7 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityStack.getActivityStack().addActivity(this);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         initViews();
@@ -37,14 +38,14 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
 //      mBottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
         mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
 //      mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);
-        mBottomNavigationBar.setBarBackgroundColor(R.color.bgColor);//set background color for navigation bar
-        mBottomNavigationBar.setInActiveColor(R.color.black_20_transparent);//unSelected icon color
-        mBottomNavigationBar.setActiveColor(R.color.common_color_b5);
+        mBottomNavigationBar.setBarBackgroundColor(R.color.homepage_bottom_navigation_bg);//set background color for navigation bar
+        mBottomNavigationBar.setInActiveColor(R.color.homepage_bottom_navigation_font_unselected);//unSelected icon color
+        mBottomNavigationBar.setActiveColor(R.color.homepage_bottom_navigation_font);
         //.addItem(new BottomNavigationItem(R.drawable.icon_one, R.string.tab_one).setActiveColorResource(R.color.green).setBadgeItem(badgeItem))
         mBottomNavigationBar.
-                addItem(new BottomNavigationItem(R.drawable.main_home_page, R.string.main_home_page))
-                .addItem(new BottomNavigationItem(R.drawable.main_teacher, R.string.main_teacher))
-                .addItem(new BottomNavigationItem(R.drawable.main_mine, R.string.main_mine))
+                addItem(new BottomNavigationItem(R.drawable.home, R.string.main_home_page).setInactiveIconResource(R.drawable.home_gray))
+                .addItem(new BottomNavigationItem(R.drawable.teacher, R.string.main_teacher).setInactiveIconResource(R.drawable.teacher_gray))
+                .addItem(new BottomNavigationItem(R.drawable.my, R.string.main_mine).setInactiveIconResource(R.drawable.my_gray))
                 .setFirstSelectedPosition(0)
                 .initialise();
 

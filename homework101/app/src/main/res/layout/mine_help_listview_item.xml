@@ -2,20 +2,25 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ctl_orders"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="@dimen/y175"
+    android:background="@color/white"
     android:descendantFocusability="blocksDescendants"
     >
 
     <TextView
-        android:id="@+id/tv_mine_help_tv"
+        android:id="@+id/tv_mine_help_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:text="@string/homepage_operation_check"
-        android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/y11"
+        android:text="@string/teacher_tutorship_time"
+        android:textColor="@color/mine_tutorship_font_color"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/x13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
     <TextView
         android:id="@+id/tv_mine_help_obligation"
@@ -23,38 +28,53 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_10dp"
         android:text="@string/mine_help_obligation"
-        android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
+        android:textColor="@color/font_color_select"
+        android:textSize="@dimen/sp_14"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="@dimen/x18"
+        />
 
     <View
         android:id="@+id/view_mine_help_line_top"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:background="@color/TextColorBlack"
+        android:layout_height="@dimen/y1"
+        android:layout_marginTop="@dimen/y7"
+        android:background="@color/line_bg"
         app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_obligation"
+        android:layout_marginLeft="@dimen/x13"
         />
 
     <ImageView
-        android:id="@+id/iv_mine_help_teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:background="@drawable/ic_launcher_round"
+        android:id="@+id/iv_mine_help_teacher_bg"
+        android:layout_width="@dimen/x52"
+        android:layout_height="@dimen/y52"
+        android:layout_marginTop="@dimen/y9"
+        android:layout_marginLeft="@dimen/x18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/homepage_teacher_visa_bg"
         app:layout_constraintBottom_toBottomOf="@+id/tv_mine_help_teacher_course"
         app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top" />
 
+    <com.shushan.homework101.banner.ImageViewRoundRect
+        android:id="@+id/iv_mine_help_teacher"
+        android:layout_width="@dimen/x46"
+        android:layout_height="@dimen/y46"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_marginLeft="@dimen/x21"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/visa"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_mine_help_teacher_course"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top" />
     <TextView
         android:id="@+id/tv_mine_help_teacher_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/y17"
         android:text="@string/homepage_teacher_name"
         android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
+        android:textSize="@dimen/sp_14"
         app:layout_constraintLeft_toRightOf="@+id/iv_mine_help_teacher"
         app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top" />
 
@@ -62,78 +82,158 @@
         android:id="@+id/tv_mine_help_teacher_honor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_10dp"
         android:text="@string/homepage_teacher_honor"
-        android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintLeft_toLeftOf="@+id/tv_mine_help_teacher_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_name" />
+        android:textColor="@color/homepage_teacher_honor_bg"
+        android:background="@drawable/homepage_teacher_honor_bg"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintLeft_toRightOf="@+id/tv_mine_help_teacher_name"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top"
+        android:layout_marginTop="@dimen/y19"
+        android:layout_marginLeft="@dimen/x7"
+        />
 
     <TextView
         android:id="@+id/tv_mine_help_teacher_course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:text="@string/teacher_course"
-        android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintLeft_toLeftOf="@+id/tv_mine_help_teacher_honor"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_honor" />
+        android:layout_marginTop="@dimen/y1"
+        android:text="@string/mine_homework_class"
+        android:textColor="@color/mine_tutorship_font_color"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_mine_help_teacher_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_honor"
+        />
 
     <View
         android:id="@+id/view_mine_help_line_center"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_2dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:background="@color/TextColorBlack"
+        android:layout_height="@dimen/y1"
+        android:layout_marginTop="@dimen/y10"
+        android:background="@color/line_bg"
+        android:layout_marginLeft="@dimen/x12"
         app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_course" />
 
     <TextView
         android:id="@+id/tv_mine_help_teacher_help_price"
         android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y10"
         android:text="@string/mine_help_check_price"
         android:textColor="@color/TextColorBlack"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintLeft_toLeftOf="@+id/view_mine_help_line_center"
+        android:textSize="@dimen/sp_13"
+        android:layout_marginLeft="@dimen/x18"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_center" />
+
+    <TextView
+        android:id="@+id/tv_mine_help_teacher_help_price_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/order_money"
+        android:textColor="@color/font_color_select"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toRightOf="@+id/tv_mine_help_teacher_help_price"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_center"
+        />
+
+    <com.shushan.homework101.banner.ImageViewRoundRect
+        android:id="@+id/iv_mine_help_playback"
+        android:layout_width="@dimen/x80"
+        android:layout_height="@dimen/y45"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top"
+        android:layout_marginRight="@dimen/x18"
+        android:layout_marginTop="@dimen/y13"
+        android:src="@drawable/homework"
+        />
+
+    <ImageView
+        android:id="@+id/iv_orders_bg"
+        android:layout_width="@dimen/x80"
+        android:layout_height="@dimen/y45"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top"
+        android:layout_marginRight="@dimen/x18"
+        android:layout_marginTop="@dimen/y13"
+        android:src="@drawable/mine_homework_item_bg"
+
+        />
 
     <TextView
         android:id="@+id/tv_mine_help_playback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:drawableTop="@drawable/mine_help_playback"
-        android:gravity="center"
         android:text="@string/mine_help_playback"
-        android:textColor="@color/text_color_black"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_mine_help_teacher_course"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top" />
-
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_top"
+        android:drawableLeft="@drawable/play"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+       android:drawablePadding="@dimen/x4"
+        android:layout_marginRight="@dimen/x34"
+        android:layout_marginTop="@dimen/y26"
+        />
+    <android.support.constraint.Group
+        android:id="@+id/group_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids=
+            "tv_mine_help_playback,
+            iv_orders_bg,
+            iv_mine_help_playback"
+        />
     <TextView
         android:id="@+id/bt_mine_help_obligation_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/y3"
         android:gravity="center"
-        android:text="@string/mine_help_obligation_price"
+        android:text="@string/mine_help_obligation_money"
         android:textColor="@color/text_color_black"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_center" />
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_mine_help_teacher_help_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_help_price" />
+
+    <TextView
+        android:id="@+id/bt_mine_help_obligation_price_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y3"
+        android:gravity="center"
+        android:text="@string/order_money"
+        android:textColor="@color/font_color_select"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toRightOf="@+id/bt_mine_help_obligation_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mine_help_teacher_help_price"
+        />
 
     <Button
         android:id="@+id/mine_help_pay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:background="@color/red_answer"
+        android:layout_width="@dimen/x80"
+        android:layout_height="@dimen/y35"
+        android:layout_marginTop="@dimen/y15"
+        android:background="@drawable/button_2"
         android:text="@string/mine_help_pay"
         android:textColor="@color/TextColorWhite"
-        android:textSize="@dimen/font_large_size"
-        app:layout_constraintRight_toRightOf="@+id/bt_mine_help_obligation_price"
-        app:layout_constraintTop_toBottomOf="@+id/bt_mine_help_obligation_price" />
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_center"
+        android:layout_marginRight="@dimen/x18"
+        />
+    <TextView
+        android:id="@+id/tv_mine_help_contact_again"
+        android:layout_width="@dimen/x90"
+        android:layout_height="@dimen/y28"
+        android:layout_marginTop="@dimen/y15"
+        android:textColor="@color/font_color_select"
+        android:textSize="@dimen/sp_14"
+        android:text="@string/mine_tutorship_contact_again"
+        app:layout_constraintTop_toBottomOf="@+id/view_mine_help_line_center"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/x18"
+        android:background="@drawable/mine_tutorshhip_details_btn_bg_other"
+        android:gravity="center"
+        android:visibility="gone"
+        />
 </android.support.constraint.ConstraintLayout>
